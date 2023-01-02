@@ -50,7 +50,7 @@ export function SlideContent(props: Content): JSX.Element {
               iconName="StarIcon"
             />
             <p className="text-sm font-semibold">
-              <span className="text-lg md:text-xl">{props.rating}</span>/5
+              <span className="text-lg md:text-xl">{props.rating}</span>/10
             </p>
           </div>
         </div>

@@ -1,6 +1,7 @@
-import { contentData } from "@/lib/data/content";
+import { Content, contentData } from "@/lib/data/content";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { Container } from "../../container/container";
 import { Button } from "../../ui/button";
 import { CustomIcon } from "../../ui/custom-icon";
@@ -9,21 +10,35 @@ import MovieInfo from "./info-movie";
 import RateMovie from "./rate-movie";
 
 export default function MovieHero(): JSX.Element {
+  const [content, setContent] = useState<Content | null>(null);
   const testurl =
     "https://image.tmdb.org/t/p/original/8Y43POKjjKDGI9MH89NW0NAzzp8.jpg";
 
   const router = useRouter();
 
-  const content = contentData?.filter((c) => c.video_id === router?.query.id);
+  // const filteredData = contentData?.filter((c) => c.video_id === router?.query.id);
+
+  useEffect(() => {
+    if (router.query.id) {
+      const filteredData = contentData?.filter(
+        (c) => c.video_id === router?.query.id
+      );
+      const second = contentData?.filter(
+        (c) => c.video_id === router?.query.id
+      );
+      const third = contentData?.filter((c) => c.video_id === router?.query.id);
+      setContent(filteredData[0]);
+    }
+  }, [router.query.id]);
 
   console.log(content);
 
   return (
     <>
-      {router.query && (
+      {content && (
         <section
           className="bg-cover bg-fixed bg-right bg-no-repeat"
-          style={{ backgroundImage: `url(${content[0]?.splash})` }}
+          style={{ backgroundImage: `url(${content.splash})` }}
         >
           <div className="top-container relative w-full bg-black/60">
             <div className="info-container">
@@ -45,10 +60,10 @@ export default function MovieHero(): JSX.Element {
                     </div>
                     <div>
                       <h1 className="dosis text-2xl font-bold line-clamp-2 md:text-3xl lg:text-4xl">
-                        {content[0]?.title}
+                        {content.title}
                       </h1>
                       <p className="mt-2 italic text-main-gray line-clamp-3 md:line-clamp-2">
-                        {content[0]?.description}
+                        {content.description}
                       </p>
                     </div>
                     <div className="mt-4 flex gap-2">
@@ -77,7 +92,7 @@ export default function MovieHero(): JSX.Element {
                         </h6>
                       </div>
                     </div>
-                    <RateMovie stars={content[0]?.rating} />
+                    <RateMovie stars={content.rating} />
                   </div>
                   <div className="flex w-full items-center justify-center pb-8 md:pb-0">
                     <Link href="#" className="hover:text-white">
@@ -94,7 +109,7 @@ export default function MovieHero(): JSX.Element {
                     </Link>
                   </div>
                 </div>
-                <MovieInfo {...content[0]} />
+                <MovieInfo {...content} />
               </Container>
             </div>
           </div>

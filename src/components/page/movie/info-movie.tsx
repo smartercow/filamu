@@ -11,14 +11,14 @@ export default function MovieInfo(props: Content): JSX.Element {
           <div className="div-info-sec">
             <h6 className="heading-sec">Genre</h6>
             <p className="values-sec">
-              {props.genres[0]?.title}
+              {props.genres[0].title}
               {props.genres.length > 1 && `, ${props.genres[1].title}`}
             </p>
           </div>
           <div className="div-info-sec">
             <h6 className="heading-sec">Actors</h6>
             <p className="values-sec">
-              {props.actors[0]},{props.actors[0]},{props.actors[0]}
+              {props.actors[0]}, {props.actors[1]}, {props.actors[2]}
               {props.actors.length > 3 && `, ${props.actors[3]}`}
               {props.genres.length > 4 && `, ${props.actors[4]}`}
             </p>
