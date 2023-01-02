@@ -20,7 +20,7 @@ export default function MovieHero(): JSX.Element {
 
   return (
     <>
-      {content && (
+      {router.query && (
         <section
           className="bg-cover bg-fixed bg-right bg-no-repeat"
           style={{ backgroundImage: `url(${content[0]?.splash})` }}
