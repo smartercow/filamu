@@ -1,0 +1,127 @@
+/* TOP CONTAINER */
+.top-container-bg {
+  background: url(/assets/images/bg/movies-bg.jpg) no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+.hero-gradient {
+  background: radial-gradient(
+    ellipse farthest-corner at 80% 80%,
+    rgb(255, 255, 255, 0.1) 0%,
+    rgba(2, 13, 24, 0.95) 90%,
+    rgba(2, 13, 24, 0.97) 97%,
+    rgba(2, 13, 24, 1) 100%
+  );
+}
+
+.info-container {
+  background: linear-gradient(
+    0deg,
+    rgba(2, 13, 24, 1) 0%,
+    rgba(2, 13, 24, 1) 4%,
+    rgba(2, 13, 24, 0) 100%
+  );
+}
+
+/* FOOTER */
+.footer-bg {
+  background: url(/assets/images/bg/movies-bg.jpg) no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+.individual-plan {
+  background-image: url("/assets/filamu/1-girl.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.family-plan {
+  background-image: url("/assets/filamu/2-family.webp");
+  background-size: cover;
+  background-position: center;
+}
+/* HERO SPAN */
+.hero-span h5 span {
+  font-weight: 500;
+}
+
+svg.star-svg {
+  display: inline;
+}
+/* SLIDER */
+/* Home slider */
+.home-slider .swiper-pagination {
+  text-align: right;
+}
+
+@media only screen and (max-width: 600px) {
+  .home-slider .swiper-pagination {
+    text-align: center;
+  }
+}
+
+.home-slider .swiper-wrapper {
+  padding-bottom: 50px;
+}
+.home-slider .swiper-pagination-bullet {
+  background: #f8fbff8c;
+  opacity: 1;
+}
+
+.home-slider .swiper-pagination-bullet-active {
+  background: #dcf836;
+}
+/* Overview slider */
+.overview-slider .swiper-pagination {
+  text-align: right;
+}
+
+.overview-slider .swiper-wrapper {
+  margin-top: 90px;
+}
+.overview-slider .swiper-pagination-bullet {
+  background: #f8fbff8c;
+  opacity: 1;
+}
+
+.overview-slider .swiper-pagination-bullet-active {
+  background: #dcf836;
+}
+
+@media only screen and (max-width: 640px) {
+  .overview-slider .swiper-pagination {
+    text-align: center;
+  }
+
+  .overview-slider .swiper-wrapper {
+    margin-top: 80px;
+    padding-bottom: 50px;
+  }
+}
+
+/* Media slider */
+.media-slider .swiper-wrapper {
+  margin-top: 13px;
+  margin-bottom: 28px;
+  height: 420px;
+  width: 540px;
+}
+
+.media-slider .swiper-slide-active {
+  background-color: #1c3d5d;
+  margin-top: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+  .media-slider .swiper-wrapper {
+    width: 100%;
+    min-width: 340px;
+  }
+}
+
+/* EMAIL INPUT */
+.email-input-icon {
+  background: url(/assets/icons/small-email.png) no-repeat right 20px center;
+}

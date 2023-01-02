@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dosis {
+  font-family: "Dosis", sans-serif;
+}
+
+.inter {
+  font-family: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-main-darkblue text-white;
+  }
+
+  main {
+    @apply min-h-screen;
+  }
+
+  a {
+    @apply transition-all duration-300 hover:text-secondary;
+  }
+}
+
+@layer components {
+  .hover-animation {
+    @apply transition-all duration-300;
+  }
+
+  /* MAIN BUTTON */
+  .main-btn {
+    @apply relative m-1 inline-flex cursor-pointer select-none items-center justify-center overflow-hidden
+           rounded-3xl bg-primary text-white shadow-lg active:shadow-none;
+  }
+
+  .main-btn-span1 {
+    @apply absolute h-0 w-0 rounded-full bg-white opacity-10 transition-all duration-300 ease-out;
+  }
+
+  .main-btn-span2 {
+    @apply relative text-[14px] font-bold uppercase;
+  }
+
+  .oauth-button {
+    @apply flex w-full justify-center gap-1 rounded-none border border-main-gray bg-white py-3 font-semibold text-inherit transition-all duration-300;
+  }
+  /* UPLOAD BUTTON */
+  .upload-btn {
+    @apply relative m-1 inline-flex cursor-pointer select-none items-center justify-center overflow-hidden
+           rounded-md bg-main-gray px-2 py-1 text-sm font-semibold uppercase text-white shadow-lg active:shadow-none;
+  }
+
+  /* TOP CONTAINER */
+  .top-container {
+    @apply pt-16 sm:pt-20 md:pt-24 lg:pt-24;
+  }
+
+  .main-container {
+    @apply mx-auto max-w-6xl px-4;
+  }
+
+  /* HEADING */
+  .sub-heading {
+    @apply text-lg font-semibold uppercase text-white;
+  }
+
+  /* MOVIE PAGE INFO */
+  .div-info-sec {
+    @apply space-y-1;
+  }
+
+  .heading-sec {
+    @apply dosis text-sm font-bold uppercase text-main-gray;
+  }
+
+  .values-sec {
+    @apply inter font-medium text-white;
+  }
+}
