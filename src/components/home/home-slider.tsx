@@ -6,6 +6,17 @@ import Link from "next/link";
 import { useWindow } from "@/lib/context/window-context";
 import { slides } from "@/lib/data";
 import { SlideContent } from "./swiperslide";
+import { contentData } from "@/lib/data/content";
+import { Genre } from "@/lib/data/genres";
+
+export type SliderProps = {
+  id: string;
+  title: string;
+  description: string;
+  genres: Genre[];
+  poster: string;
+  stars: string;
+};
 
 export default function HomeSlider(): JSX.Element {
   const { width } = useWindow();
@@ -33,9 +44,9 @@ export default function HomeSlider(): JSX.Element {
         className="swiper-wrapper home-slider relative h-full"
         {...customPagination}
       >
-        {slides.map(({ ...slide }) => (
+        {contentData.map(({ ...slide }) => (
           <SwiperSlide key={slide.id}>
-            <Link href={`/movies/title/${slide.id}`}>
+            <Link href={`/movies/title/${slide.video_id}`}>
               <SlideContent {...slide} />
             </Link>
           </SwiperSlide>

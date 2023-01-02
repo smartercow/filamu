@@ -1,11 +1,12 @@
 import cn from "clsx";
 
 type VideoQualityProps = {
-  className?: string;
+  value: string;
   colored?: boolean;
+  className?: string;
 };
 
-export function VideoQuality({ className, colored }: VideoQualityProps) {
+export function VideoQuality({ value, colored, className }: VideoQualityProps) {
   return (
     <span
       className={cn(
@@ -14,7 +15,7 @@ export function VideoQuality({ className, colored }: VideoQualityProps) {
         className
       )}
     >
-      HD 720
+      {value}
     </span>
   );
 }

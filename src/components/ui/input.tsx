@@ -13,7 +13,7 @@ export type InputProps = {
   className?: string;
   placeholder?: string;
   labelClassName?: string;
-  handleChange: ({ target: { value } }: ChangeEvent<HTMLInputElement>) => void;
+  handleChange?: ({ target: { value } }: ChangeEvent<HTMLInputElement>) => void;
 };
 
 // eslint-disable-next-line react/display-name

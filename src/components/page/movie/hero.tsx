@@ -1,4 +1,6 @@
+import { contentData } from "@/lib/data/content";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { Container } from "../../container/container";
 import { Button } from "../../ui/button";
 import { CustomIcon } from "../../ui/custom-icon";
@@ -6,31 +8,20 @@ import { HeroIcon } from "../../ui/hero-icon";
 import MovieInfo from "./info-movie";
 import RateMovie from "./rate-movie";
 
-const hLinks = [
-  {
-    name: "Overview",
-    href: "overview",
-  },
-  {
-    name: "Reviews",
-    href: "reviews",
-  },
-  {
-    name: "Cast & crew",
-    href: "cast-crews",
-  },
-  {
-    name: "Related shows",
-    href: "related-shows",
-  },
-];
 export default function MovieHero(): JSX.Element {
   const testurl =
     "https://image.tmdb.org/t/p/original/8Y43POKjjKDGI9MH89NW0NAzzp8.jpg";
+
+  const router = useRouter();
+
+  const content = contentData?.filter((c) => c.video_id === router?.query.id);
+
+  console.log(content);
+
   return (
     <section
       className="bg-cover bg-fixed bg-right bg-no-repeat"
-      style={{ backgroundImage: `url(${testurl})` }}
+      style={{ backgroundImage: `url(${content[0]?.splash})` }}
     >
       <div className="top-container relative w-full bg-black/60">
         <div className="info-container">
@@ -52,12 +43,10 @@ export default function MovieHero(): JSX.Element {
                 </div>
                 <div>
                   <h1 className="dosis text-2xl font-bold line-clamp-2 md:text-3xl lg:text-4xl">
-                    Mariah Carey: Merry Christmas to All!
+                    {content[0]?.title}
                   </h1>
                   <p className="mt-2 italic text-main-gray line-clamp-3 md:line-clamp-2">
-                    The singer-songwriter performs a repertoire of her festive
-                    holiday hits, including the chart-topping perennial favorite
-                    &quot;All I Want for Christmas Is You&quot;.
+                    {content[0]?.description}
                   </p>
                 </div>
                 <div className="mt-4 flex gap-2">
@@ -86,7 +75,7 @@ export default function MovieHero(): JSX.Element {
                     </h6>
                   </div>
                 </div>
-                <RateMovie />
+                <RateMovie stars={content[0]?.rating} />
               </div>
               <div className="flex w-full items-center justify-center pb-8 md:pb-0">
                 <Link href="#" className="hover:text-white">
@@ -103,7 +92,7 @@ export default function MovieHero(): JSX.Element {
                 </Link>
               </div>
             </div>
-            <MovieInfo />
+            <MovieInfo {...content[0]} />
           </Container>
         </div>
       </div>

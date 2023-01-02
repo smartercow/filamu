@@ -14,7 +14,10 @@ const fillColorArray = [
   "#f1d045",
 ];
 
-export default function RateMovie(): JSX.Element {
+type RateProps = {
+  stars: string;
+};
+export default function RateMovie({ stars }: RateProps): JSX.Element {
   const [rating, setRating] = useState(0);
 
   const handleRating = (rate: number) => {
@@ -25,7 +28,7 @@ export default function RateMovie(): JSX.Element {
     <div className="mt-4 w-full space-y-3">
       <div>
         <p className="pl-1 text-sm font-semibold">
-          <span className="text-lg md:text-2xl">4.5</span>{" "}
+          <span className="text-lg md:text-2xl">{stars}</span>{" "}
           <span className="text-xs font-semibold uppercase">stars</span>
         </p>
       </div>

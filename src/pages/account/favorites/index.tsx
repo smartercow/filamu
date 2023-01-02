@@ -3,8 +3,10 @@ import Favorites from "@/components/page/account/favorites/favorites";
 
 export default function FavoritesPage(): JSX.Element {
   return (
-    <Account>
-      <Favorites />
-    </Account>
+    <main>
+      <Account>
+        <Favorites />
+      </Account>
+    </main>
   );
 }

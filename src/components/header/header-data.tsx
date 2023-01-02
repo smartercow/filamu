@@ -9,21 +9,21 @@ export type DropdownDataProps = {
 export const DropdownData: Readonly<DropdownDataProps[]> = [
   {
     id: "1",
-    title: "All categories",
-    description: "Check the latest updates on your favorite movies and series",
+    title: "See all ",
+    description: "See all ",
     href: "/categories",
   },
   {
     id: "2",
-    title: "Check the latest",
-    description: "Check the latest updates on your favorite movies and series.",
+    title: "All categories ",
+    description: "Browse all ",
     href: "/latest",
     hasCategoryName: true,
   },
   {
     id: "3",
-    title: "See upcoming",
-    description: "Check the latest updates on your favorite movies and series",
+    title: "news on Filamu",
+    description: "Read the latest ",
     href: "/upcoming",
     hasCategoryName: true,
   },

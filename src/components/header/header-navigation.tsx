@@ -72,17 +72,6 @@ const HeaderNavigation = () => {
                 <li style={{ gridRow: "span 3" }}>
                   <NavigationMenu.Link asChild>
                     <a className="Callout" href={item.href}>
-                      {/*                       <svg
-                        aria-hidden
-                        width='38'
-                        height='38'
-                        viewBox='0 0 25 25'
-                        fill='white'
-                      >
-                        <path d='M12 25C7.58173 25 4 21.4183 4 17C4 12.5817 7.58173 9 12 9V25Z'></path>
-                        <path d='M12 0H4V8H12V0Z'></path>
-                        <path d='M17 8C19.2091 8 21 6.20914 21 4C21 1.79086 19.2091 0 17 0C14.7909 0 13 1.79086 13 4C13 6.20914 14.7909 8 17 8Z'></path>
-                      </svg> */}
                       <img
                         src="/assets/images/posters/bladerunner.jpg"
                         alt={item.title}
@@ -103,15 +92,32 @@ const HeaderNavigation = () => {
                   </NavigationMenu.Link>
                 </li>
 
-                {DropdownData.map((category, i) => (
+                {DropdownData.map((link, i) => (
                   <ListItem
                     key={i}
-                    title={category.title}
-                    href={`${item.href}${category.href}`}
+                    title={`${link.title}${item.title}`}
+                    href={`${item.href}${link.href}`}
                     category={item.title}
-                    hasCategoryName={category.hasCategoryName}
+                    // hasCategoryName={category.hasCategoryName}
                   >
-                    {category.description}
+                    {link.id === "1" && (
+                      <>
+                        {link.description}
+                        {item.title}’s on Filamu.
+                      </>
+                    )}
+                    {link.id === "2" && (
+                      <>
+                        {link.description}
+                        {item.title} categories.
+                      </>
+                    )}
+                    {link.id === "3" && (
+                      <>
+                        {link.description}
+                        {item.title} news.
+                      </>
+                    )}
                   </ListItem>
                 ))}
               </ul>
@@ -168,7 +174,9 @@ const ListItem = forwardRef<HTMLAnchorElement, ListItemProps>(
           ref={forwardedRef}
         >
           <div className="ListItemHeading">
-            {title}
+            <h4 className="uppercase">
+              {category} {title}
+            </h4>
             {hasCategoryName && <span className="lowercase"> {category}</span>}
           </div>
           <p className="ListItemText">{children}</p>

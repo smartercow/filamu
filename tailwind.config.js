@@ -12,6 +12,7 @@ module.exports = {
         primary: "#dd003f",
         secondary: "#dcf836",
         "main-blue": "#233a50",
+        "main-blue-light": "#4280bf",
         "main-blue-sec": "#0f2133",
         "main-blue-tet": "#06121E",
         "main-blue-for": "#0B1A2A",

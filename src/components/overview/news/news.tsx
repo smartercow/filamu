@@ -76,7 +76,7 @@ export default function NewsOverview(): JSX.Element {
 
             <div className="flex w-full justify-center">
               <div className="min-w-[170px] overflow-hidden rounded-md">
-                <img src="/assets/images/news/blog-it1.jpg" alt="News" />
+                <img src={newsData[0].image} alt="News" />
               </div>
             </div>
           </div>
@@ -87,20 +87,15 @@ export default function NewsOverview(): JSX.Element {
                 href="/"
                 className="text-lg font-bold text-link-blue line-clamp-2"
               >
-                Brie Larson to play first female white house candidate Victoria
-                Woodull in Amazon film
+                {newsData[0].title}
               </Link>
             </div>
             <div>
-              <small className="text-main-gray">12 hours ago</small>
+              <small className="text-main-gray">{newsData[0].timestamp}</small>
             </div>
             <div>
               <p className="text-main-gray line-clamp-2 md:line-clamp-4">
-                Exclusive: Amazon Studios has acquired Victoria Woodhull, with
-                Oscar winning Room star Brie Larson polsed to produce, and play
-                the first female candidate for the presidency of the United
-                States. Amazon bought it in a pitch package deal. Ben Kopit, who
-                wrote the Warner Bros film Libertine that has...
+                {newsData[0].description}
               </p>
             </div>
           </div>
@@ -117,7 +112,7 @@ export default function NewsOverview(): JSX.Element {
           </div>
         </div>
         <div className="flex flex-col gap-3 sm:grid sm:grid-cols-2 sm:gap-3 md:gap-5 lg:gap-7">
-          {newsData.slice(0, width < 640 ? 2 : 4).map((news) => (
+          {newsData.slice(1, width < 640 ? 3 : 5).map((news) => (
             <div key={news.id} className="space-y-1 md:space-y-2">
               <div>
                 <Link
@@ -128,7 +123,7 @@ export default function NewsOverview(): JSX.Element {
                 </Link>
               </div>
               <div>
-                <small className="text-main-gray">{news.date}</small>
+                <small className="text-main-gray">{news.timestamp}</small>
               </div>
             </div>
           ))}
@@ -146,11 +141,11 @@ const newsData = [
   {
     id: 1,
     title:
-      "Brie Larson to play first female white house candidate Victoria Woodull in Amazon film",
-    image: "/assets/images/news/blog-it1.jpg",
-    date: "12 hours ago",
+      "African cinema is more exciting than ever. Where’s its wider recognition?",
+    image: "/assets/news/news1.png",
+    timestamp: "12 hours ago",
     description:
-      "Exclusive: Amazon Studios has acquired Victoria Woodhull, with Oscar winning Room star Brie Larson polsed to produce, and play the",
+      "Two years ago, “Parasite” director Bong Joon Ho called out American audiences. His charge? Americans don’t know enough about movies outside their own borders. Once you overcome the 1-inch tall barrier of subtitles,” he said, while accepting a Golden Globe award for his film, “you will be introduced to so many more amazing films.",
     link: "/",
   },
   {
@@ -158,27 +153,36 @@ const newsData = [
     title:
       "Brie Larson to play first female white house candidate Victoria Woodull in Amazon film",
     image: "/assets/images/news/blog-it1.jpg",
-    date: "12 hours ago",
+    timestamp: "14 hours ago",
     description:
       "Exclusive: Amazon Studios has acquired Victoria Woodhull, with Oscar winning Room star Brie Larson polsed to produce, and play the",
     link: "/",
   },
   {
     id: 3,
-    title:
-      "Brie Larson to play first female white house candidate Victoria Woodull in Amazon film",
+    title: "Hollywood puts Africa in a box",
     image: "/assets/images/news/blog-it1.jpg",
-    date: "12 hours ago",
+    timestamp: "18 hours ago",
     description:
-      "Exclusive: Amazon Studios has acquired Victoria Woodhull, with Oscar winning Room star Brie Larson polsed to produce, and play the",
+      "The issue, in part, is one of perceptions. Many Hollywood executives thought, and continue to think, that no one is interested in seeing films focused on Black and African people, said Moradewun Adejunmobi, a professor at the University of California, Davis, who studies African literature and pop culture.",
     link: "/",
   },
   {
     id: 4,
     title:
+      "The award-winning African documentary project that goes inside the lives of migrants",
+    image: "/assets/images/news/blog-it1.jpg",
+    timestamp: "20 hours ago",
+    description:
+      "For far too long the west has been telling stories about and talking on behalf of Africa. However, a new slate of 25 documentary films by African filmmakers called Generation Africa is currently making waves at international film festivals and is set to shift perspectives about migration in and from the continent.",
+    link: "/",
+  },
+  {
+    id: 5,
+    title:
       "Brie Larson to play first female white house candidate Victoria Woodull in Amazon film",
     image: "/assets/images/news/blog-it1.jpg",
-    date: "12 hours ago",
+    timestamp: "1 day ago",
     description:
       "Exclusive: Amazon Studios has acquired Victoria Woodhull, with Oscar winning Room star Brie Larson polsed to produce, and play the",
     link: "/",

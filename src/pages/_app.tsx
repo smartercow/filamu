@@ -36,7 +36,6 @@ import UserContextProvider from "@/lib/context/user-context";
 const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps, router }: AppProps) {
-  const isDashboardPath = router.pathname.startsWith("/dashboard");
   const [supabaseClient] = useState(() =>
     createBrowserSupabaseClient<Database>()
   );

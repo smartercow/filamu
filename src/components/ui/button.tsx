@@ -9,6 +9,7 @@ type ButtonProps = ComponentPropsWithRef<"button"> & {
   loading?: boolean;
   hasIcon?: boolean;
   btnIcon?: IconName;
+  disabled?: boolean;
   textStyle?: string;
   hasAnimation?: boolean;
   iconClassName?: string;
@@ -22,10 +23,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       loading,
       hasIcon,
       btnIcon,
+      disabled,
       textStyle,
       hasAnimation,
       iconClassName,
-      disabled,
       children,
       ...rest
     },
@@ -36,7 +37,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         className={cn(
-          "main-btn group btn m-0 border-none",
+          "main-btn btn hover-animation group m-0 border-none hover:bg-opacity-80",
           loading && "relative !text-transparent disabled:cursor-wait",
           disabled && "bg-main-gray disabled:cursor-not-allowed",
           className
