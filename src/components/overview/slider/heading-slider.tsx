@@ -1,26 +1,26 @@
 import { useState } from "react";
 import { OverviewHeading } from "../overview";
 import type { OverviewHeadingProps } from "../overview";
+import { TrendProps } from "./overview-slider";
+import { Trends } from "@/lib/data/genres";
 
 const trends = [
-  { name: "#Popular", trend: "popular" },
-  { name: "#Coming Soon", trend: "coming-soon" },
-  { name: "#Top Rated", trend: "top-rated" },
-  { name: "#Most Reviewed", trend: "most-reviewed" },
+  { name: "#Trending", trend: Trends[0].href },
+  { name: "#Popular", trend: Trends[1].href },
+  { name: "#Recent", trend: Trends[2].href },
+  { name: "#Top Rated", trend: Trends[3].href },
 ];
 
-export default function HeadingSlider({
-  title,
-  href,
-}: OverviewHeadingProps): JSX.Element {
-  const [trend, setTrend] = useState("popular");
+console.log("trends", trends[2].trend);
+
+export default function HeadingSlider(props: TrendProps): JSX.Element {
   return (
     <div className="absolute top-0 left-0 w-full space-y-4 text-main-gray">
-      <OverviewHeading title={title} href={href} />
+      <OverviewHeading title={props.title} href={props.href} />
 
       <div className="flex justify-between gap-1 whitespace-nowrap text-xs font-semibold xs:text-sm sm:justify-start sm:gap-5">
         {trends.map((t) => {
-          if (trend === t.trend)
+          if (props.trend[0] === t.trend)
             return (
               <div
                 key={t.trend}
@@ -33,7 +33,7 @@ export default function HeadingSlider({
             return (
               <div
                 key={t.trend}
-                onClick={() => setTrend(t.trend)}
+                onClick={() => props.setTrend(t.trend)}
                 className="flex cursor-pointer items-center gap-1 uppercase text-main-gray transition-all 
                            duration-300 hover:text-secondary "
               >

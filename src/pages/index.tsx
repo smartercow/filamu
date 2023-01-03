@@ -20,19 +20,11 @@ export default function HomePage(): JSX.Element {
       <OverviewSliderLayout>
         <Overview>
           <OverviewSlider
-            title="Latest movies"
-            href="/movies"
-            category="movies"
-            from={0}
-            to={7}
+            title="Recommended"
+            href="/recommended"
+            category="recommended"
           />
-          <OverviewSlider
-            title="TV Programmes"
-            href="/programmes"
-            category="programmes"
-            from={3}
-            to={8}
-          />
+          <OverviewSlider title="Latest" href="/latest" category="latest" />
         </Overview>
       </OverviewSliderLayout>
 

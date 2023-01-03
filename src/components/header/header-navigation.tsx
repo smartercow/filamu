@@ -59,15 +59,15 @@ const HeaderNavigation = () => {
           <NavigationMenu.Item key={i}>
             <NavigationMenu.Trigger
               className="NavigationMenuTrigger group whitespace-nowrap font-semibold uppercase 
-                                             text-main-gray hover:text-secondary focus:text-secondary"
+                                             text-white/80 hover:text-secondary focus:text-secondary"
             >
               {item.title}{" "}
               <CaretDownIcon
-                className="CaretDown text-main-gray group-hover:text-secondary"
+                className="CaretDown text-white/80 group-hover:text-secondary"
                 aria-hidden
               />
             </NavigationMenu.Trigger>
-            <NavigationMenu.Content className="NavigationMenuContent">
+            <NavigationMenu.Content className="NavigationMenuContent bg-main-blue/40">
               <ul className="List one">
                 <li style={{ gridRow: "span 3" }}>
                   <NavigationMenu.Link asChild>
@@ -152,7 +152,7 @@ export function NavigationLinkMain({
   return (
     <NavigationMenu.Item>
       <NavigationMenu.Link
-        className="font-semibold uppercase text-main-gray"
+        className="font-semibold uppercase text-white/80"
         href={href}
       >
         {title}

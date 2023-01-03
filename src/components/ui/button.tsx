@@ -37,7 +37,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         className={cn(
-          "main-btn btn hover-animation group m-0 border-none hover:bg-opacity-80",
+          "main-btn btn hover-animation group m-0 hover:bg-opacity-80",
           loading && "relative !text-transparent disabled:cursor-wait",
           disabled && "bg-main-gray disabled:cursor-not-allowed",
           className

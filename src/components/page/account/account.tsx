@@ -1,8 +1,7 @@
 import { Container, TopContainer } from "@/components/container/container";
 import Search from "@/components/search/search";
-import ProfileAside from "./profile/profile-aside";
-import { ReactNode, useEffect, useState } from "react";
-import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
+import ProfileAside from "./profile/aside-profile";
+import { ReactNode } from "react";
 import useUserProfile from "@/utils/api/use-user-profile";
 import { HeroIcon } from "@/components/ui/hero-icon";
 

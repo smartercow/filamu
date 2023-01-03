@@ -2,7 +2,7 @@ import InternalLink from "../ui/link";
 
 export type OverviewHeadingProps = {
   title: string;
-  href: string;
+  href?: string;
   noLink?: boolean;
 };
 
@@ -17,9 +17,3 @@ export function OverviewHeading({ title, href, noLink }: OverviewHeadingProps) {
     </div>
   );
 }
-
-/* export default function OverviewMedia(): JSX.Element {
-  return (
-    <div>overview</div>
-  )
-} */

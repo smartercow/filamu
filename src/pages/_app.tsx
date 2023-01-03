@@ -32,6 +32,7 @@ import AuthModal from "@/components/modal/auth-modal";
 import { RecoilRoot } from "recoil";
 import SubscriptionModal from "@/components/modal/subscription-modal";
 import UserContextProvider from "@/lib/context/user-context";
+import TrailerModal from "@/components/modal/trailer-modal";
 
 const queryClient = new QueryClient();
 
@@ -41,14 +42,12 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   );
 
   useEffect(() => {
-    // our dropdowns are used for navigation a lot
-    // they work off css focus states, so they don't get removed
-    // on navigation transitions.  this is a hack to force them to
     const element = window?.document?.activeElement as HTMLElement;
     if (typeof element?.blur === "function") {
       element.blur();
     }
   }, [router.asPath]);
+
   return (
     <SessionContextProvider
       supabaseClient={supabaseClient}
@@ -58,11 +57,14 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <WindowContextProvider>
           <RecoilRoot>
             <UserContextProvider>
-              <Header />
-              <Component {...pageProps} />
-              <Footer />
+              <>
+                <Header />
+                <Component {...pageProps} />
+                <Footer />
+              </>
               <AuthModal />
               <SubscriptionModal />
+              <TrailerModal />
               <ToastContainer />
             </UserContextProvider>
           </RecoilRoot>

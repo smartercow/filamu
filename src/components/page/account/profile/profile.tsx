@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import ProfileDetails from "./profile-details";
-import ProfilePassword from "./profile-password";
+import ProfileDetails from "./details-profile";
+import ProfilePassword from "./password-profile";
 
 export default function Profile(): JSX.Element {
   return (

@@ -22,8 +22,8 @@ const HeaderProfile: React.FC<RightContentProps> = (): JSX.Element => {
     <Menu as="div" className="relative inline-block text-left">
       <div>
         <Menu.Button
-          className="z-10 inline-flex w-full items-center justify-center rounded-md bg-main-gray bg-opacity-20 px-2 py-1 text-base 
-                     font-bold uppercase text-main-gray hover:opacity-90 md:py-1.5 md:px-4  
+          className="hover-animation z-10 inline-flex w-full items-center justify-center rounded-md bg-white bg-opacity-20 px-2 py-1 text-base 
+                     font-bold uppercase text-white/80 hover:opacity-90 md:py-1.5 md:px-4  
                      md:hover:bg-opacity-10 md:hover:opacity-100"
         >
           <span className="hidden md:inline-flex">Account</span>
@@ -47,8 +47,8 @@ const HeaderProfile: React.FC<RightContentProps> = (): JSX.Element => {
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items
-          className="hover-animation absolute right-0 z-10 mt-2 w-40 origin-top-right divide-y divide-gray-100 rounded-md border 
-                   border-main-gray border-opacity-20 bg-main-darkblue bg-opacity-90 shadow-lg ring-1 ring-black ring-opacity-5 
+          className="hover-animation absolute right-0 z-10 mt-1 w-40 origin-top-right divide-y divide-gray-100 rounded-md border 
+                   border-main-gray border-opacity-20 bg-main-darkblue/70 bg-opacity-90 shadow-lg ring-1 ring-black ring-opacity-5 
                    focus:outline-none md:w-56"
         >
           <div className="px-1 py-1 text-base font-semibold">
@@ -80,11 +80,11 @@ const HeaderProfile: React.FC<RightContentProps> = (): JSX.Element => {
                 >
                   <HeroIcon
                     className="hover-animation mr-2 h-5 w-5 md:h-7 md:w-7"
-                    iconName="BookmarkIcon"
+                    iconName="HeartIcon"
                     solid={active ? true : false}
                     aria-hidden="true"
                   />
-                  Bookmarks
+                  Favorites
                 </button>
               )}
             </Menu.Item>

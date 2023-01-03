@@ -17,7 +17,7 @@ export function SlideContent(props: Content): JSX.Element {
         />
       </div>
       <div
-        className="absolute bottom-0 flex w-full flex-col justify-start gap-1 bg-gradient-to-t from-black via-black/70 px-2 pb-3 
+        className="absolute bottom-0 flex w-full flex-col justify-start gap-1 bg-gradient-to-t from-black via-black/80 to-black/5 px-2 pb-3 
                       text-left md:px-3 md:pb-5 lg:px-6"
       >
         <div className="flex gap-2">
@@ -44,7 +44,7 @@ export function SlideContent(props: Content): JSX.Element {
           </h5>
         </div>
         <div className="hidden lg:inline-flex">
-          <div className="category-badge flex items-center gap-1">
+          <div className="flex items-center gap-1">
             <CustomIcon
               className="h-5 w-5 text-star-yellow"
               iconName="StarIcon"

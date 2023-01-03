@@ -1,10 +1,9 @@
 import "swiper/css";
 import "swiper/css/pagination";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
-import Link from "next/link";
 import { useWindow } from "@/lib/context/window-context";
-import { slides } from "@/lib/data";
 import { SlideContent } from "./swiperslide";
 import { contentData } from "@/lib/data/content";
 import { Genre } from "@/lib/data/genres";
@@ -44,13 +43,15 @@ export default function HomeSlider(): JSX.Element {
         className="swiper-wrapper home-slider relative h-full"
         {...customPagination}
       >
-        {contentData.map(({ ...slide }) => (
-          <SwiperSlide key={slide.id}>
-            <Link href={`/movies/title/${slide.video_id}`}>
-              <SlideContent {...slide} />
-            </Link>
-          </SwiperSlide>
-        ))}
+        {contentData
+          .filter((content) => content.highlight === "home-slider")
+          .map(({ ...slide }) => (
+            <SwiperSlide key={slide.id}>
+              <Link href={`/${slide.type}/title/${slide.video_id}`}>
+                <SlideContent {...slide} />
+              </Link>
+            </SwiperSlide>
+          ))}
         <div className="absolute bottom-0 h-10 w-full">
           <div className="swiper-pagination swiper-pagination-bullets"></div>
         </div>

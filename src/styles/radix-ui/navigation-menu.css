@@ -1,8 +1,8 @@
-@import '@radix-ui/colors/blackA.css';
-@import '@radix-ui/colors/indigo.css';
-@import '@radix-ui/colors/mauve.css';
-@import '@radix-ui/colors/purple.css';
-@import '@radix-ui/colors/violet.css';
+@import "@radix-ui/colors/blackA.css";
+@import "@radix-ui/colors/indigo.css";
+@import "@radix-ui/colors/mauve.css";
+@import "@radix-ui/colors/purple.css";
+@import "@radix-ui/colors/violet.css";
 
 .NavigationMenuRoot {
   position: relative;
@@ -19,7 +19,7 @@
   padding: 4px;
   border-radius: 6px;
   list-style: none;
-  box-shadow: 0 2px 10px var(--blackA7);
+  /* box-shadow: 0 2px 10px var(--blackA7); */
   margin: 0;
 }
 
@@ -65,16 +65,16 @@
   animation-duration: 250ms;
   animation-timing-function: ease;
 }
-.NavigationMenuContent[data-motion='from-start'] {
+.NavigationMenuContent[data-motion="from-start"] {
   animation-name: enterFromLeft;
 }
-.NavigationMenuContent[data-motion='from-end'] {
+.NavigationMenuContent[data-motion="from-end"] {
   animation-name: enterFromRight;
 }
-.NavigationMenuContent[data-motion='to-start'] {
+.NavigationMenuContent[data-motion="to-start"] {
   animation-name: exitToLeft;
 }
-.NavigationMenuContent[data-motion='to-end'] {
+.NavigationMenuContent[data-motion="to-end"] {
   animation-name: exitToRight;
 }
 @media only screen and (min-width: 600px) {
@@ -93,10 +93,10 @@
   z-index: 1;
   transition: width, transform 250ms ease;
 }
-.NavigationMenuIndicator[data-state='visible'] {
+.NavigationMenuIndicator[data-state="visible"] {
   animation: fadeIn 200ms ease;
 }
-.NavigationMenuIndicator[data-state='hidden'] {
+.NavigationMenuIndicator[data-state="hidden"] {
   animation: fadeOut 200ms ease;
 }
 
@@ -105,7 +105,7 @@
   transform-origin: top center;
   margin-top: 10px;
   width: 100%;
-  background-color: white;
+  background-color: rgb(255 255 255 / 0.8);
   border-radius: 6px;
   overflow: hidden;
   box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
@@ -113,10 +113,10 @@
   height: var(--radix-navigation-menu-viewport-height);
   transition: width, height, 300ms ease;
 }
-.NavigationMenuViewport[data-state='open'] {
+.NavigationMenuViewport[data-state="open"] {
   animation: scaleIn 200ms ease;
 }
-.NavigationMenuViewport[data-state='closed'] {
+.NavigationMenuViewport[data-state="closed"] {
   animation: scaleOut 200ms ease;
 }
 @media only screen and (min-width: 600px) {
@@ -192,7 +192,7 @@
 }
 
 .CalloutHeading {
-  color: white;
+  color: rgb(255 255 255 / 0.8);
   font-size: 18px;
   font-weight: 500;
   line-height: 1.2;
@@ -221,14 +221,14 @@
   top: 1px;
   transition: transform 250ms ease;
 }
-[data-state='open'] > .CaretDown {
+[data-state="open"] > .CaretDown {
   transform: rotate(-180deg);
 }
 
 .Arrow {
   position: relative;
   top: 70%;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.4);
   width: 10px;
   height: 10px;
   transform: rotate(45deg);

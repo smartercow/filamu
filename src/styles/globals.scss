@@ -10,6 +10,10 @@
   font-family: "Inter", sans-serif;
 }
 
+body {
+  overflow: overlay;
+}
+
 @layer base {
   body {
     @apply bg-main-darkblue text-white;
@@ -27,6 +31,10 @@
 @layer components {
   .hover-animation {
     @apply transition-all duration-300;
+  }
+
+  .app-width-handler {
+    @apply mx-auto max-w-6xl pl-4 pr-6;
   }
 
   /* MAIN BUTTON */
@@ -48,8 +56,7 @@
   }
   /* UPLOAD BUTTON */
   .upload-btn {
-    @apply relative m-1 inline-flex cursor-pointer select-none items-center justify-center overflow-hidden
-           rounded-md bg-main-gray px-2 py-1 text-sm font-semibold uppercase text-white shadow-lg active:shadow-none;
+    @apply hover-animation cursor-pointer select-none rounded-md bg-primary px-3.5 py-2 text-sm font-bold uppercase hover:bg-opacity-80;
   }
 
   /* TOP CONTAINER */

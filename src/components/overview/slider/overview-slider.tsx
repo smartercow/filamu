@@ -4,25 +4,33 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import { slides } from "@/lib/data";
 import { useWindow } from "@/lib/context/window-context";
-import { SlideContent } from "./highlight-slider";
+import { SlideContent } from "./swiperslide";
 import HeadingSlider from "./heading-slider";
+import { contentData } from "@/lib/data/content";
+import { useState } from "react";
+import { Trend, Trends } from "@/lib/data/genres";
 
 type OverviewProps = {
   title: string;
   href: string;
   category: string;
-  from: number;
-  to: number;
+};
+
+export type TrendProps = {
+  title: string;
+  href: string;
+  noLink?: boolean;
+  trend: string;
+  setTrend: (trend: {}) => void;
 };
 
 export function OverviewSlider({
   title,
   href,
   category,
-  from,
-  to,
 }: OverviewProps): JSX.Element {
   const { width } = useWindow();
+  const [trend, setTrend] = useState(Trends[0].href);
 
   const customPagination = {
     pagination: {
@@ -34,34 +42,50 @@ export function OverviewSlider({
     },
   };
 
+  console.log("trend", trend);
+  console.log("trends", Trends[2]);
+
   return (
-    <div className="w-full">
-      <Swiper
-        slidesPerView={width < 560 ? 2 : width < 768 ? 3 : 4}
-        spaceBetween={20}
-        autoplay={{
-          delay: 10000,
-          // disableOnInteraction: false,
-        }}
-        modules={[Autoplay, Pagination]}
-        {...customPagination}
-        className="overview-slider relative"
-      >
-        {slides
-          .slice(from, to)
-          .reverse()
-          .map(({ ...slide }) => (
-            <SwiperSlide key={slide.id}>
-              <SlideContent {...slide} />
-            </SwiperSlide>
-          ))}
+    <>
+      <div className="w-full">
+        <Swiper
+          slidesPerView={width < 560 ? 2 : width < 768 ? 3 : 4}
+          spaceBetween={20}
+          autoplay={{
+            delay: 10000,
+            // disableOnInteraction: false,
+          }}
+          modules={[Autoplay, Pagination]}
+          {...customPagination}
+          className="overview-slider relative"
+        >
+          {contentData
+            .filter(
+              (content) =>
+                (content.highlight === category &&
+                  content.trends[0].href === trend) ||
+                content.trends[1]?.href === trend ||
+                content.trends[2]?.href === trend ||
+                content.trends[3]?.href === trend
+            )
+            .map(({ ...slide }) => (
+              <SwiperSlide key={slide.id}>
+                <SlideContent {...slide} />
+              </SwiperSlide>
+            ))}
 
-        <HeadingSlider title={title} href={href} />
+          <HeadingSlider
+            title={title}
+            href={href}
+            trend={trend}
+            setTrend={setTrend}
+          />
 
-        <div className="absolute bottom-0 h-7 w-full sm:top-12 sm:right-0 sm:w-40">
-          <div className="swiper-pagination"></div>
-        </div>
-      </Swiper>
-    </div>
+          <div className="absolute bottom-0 h-7 w-full sm:top-12 sm:right-0 sm:w-40">
+            <div className="swiper-pagination"></div>
+          </div>
+        </Swiper>
+      </div>
+    </>
   );
 }

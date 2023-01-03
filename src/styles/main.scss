@@ -5,6 +5,15 @@
   background-size: cover;
 }
 
+/* MOVIE PAGE */
+.movie-page-top-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(2, 13, 24, 1) 0%,
+    rgba(2, 13, 24, 0) 100%
+  );
+}
+
 .hero-gradient {
   background: radial-gradient(
     ellipse farthest-corner at 80% 80%,
@@ -124,4 +133,9 @@ svg.star-svg {
 /* EMAIL INPUT */
 .email-input-icon {
   background: url(/assets/icons/small-email.png) no-repeat right 20px center;
+}
+
+.download-app {
+  background: url(/assets/filamu/download-app.png) no-repeat center;
+  background-size: cover;
 }

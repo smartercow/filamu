@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Aside from "../aside/aside";
 import { CelebritiesSpotligt } from "../aside/celebrities-aside";
+import DownloadAside from "../aside/download-aside";
 import NewsletterAside from "../aside/newsletter-aside";
 import { FacebookAside, TwitterAside } from "../aside/social-aside";
 import { Placeholder } from "../common/placeholder";
@@ -23,7 +24,8 @@ export function OverviewSliderLayout({ children }: LayoutProps): JSX.Element {
     <MainContainer className="dosis flex justify-center gap-5 py-10 md:py-12 lg:justify-between">
       {children}
       <Aside>
-        <NewsletterAside />
+        {/* <NewsletterAside /> */}
+        <DownloadAside />
         <CelebritiesSpotligt />
       </Aside>
     </MainContainer>
