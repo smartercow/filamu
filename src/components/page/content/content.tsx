@@ -1,12 +1,14 @@
+import dynamic from "next/dynamic";
+import { ContentsPageProps } from "../shared/page-contents";
 import ContentHero from "./hero-content";
-import ContentPageMore from "./more-content";
 
-export type ContentPageProps = {
-  contentType: string;
-};
+const ContentPageMore = dynamic(() => import("./more-content"), {
+  ssr: false,
+});
+
 export default function ContentPage({
   contentType,
-}: ContentPageProps): JSX.Element {
+}: ContentsPageProps): JSX.Element {
   return (
     <main className="bg-main-darkblue pb-10 text-white md:pb-14 lg:pb-16">
       <ContentHero />

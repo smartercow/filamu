@@ -2,15 +2,13 @@
 import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { useSetRecoilState } from "recoil";
-// import { useAuth } from '@lib/context/auth-context';
-import type { LayoutProps } from "./common-layout";
 import { AuthModalState } from "@/lib/states/auth-state";
 import { SubscriptionModalState } from "@/lib/states/subscription-state";
 import { sleep } from "@/lib/utils";
 import { Placeholder } from "../common/placeholder";
+import type { LayoutProps } from "./common-layout";
 
 export function AuthLayout({ children }: LayoutProps): JSX.Element {
-  // const { user, subscriber, loading } = useAuth();
   const user = "";
   const loading = false;
   const subscriber = false;

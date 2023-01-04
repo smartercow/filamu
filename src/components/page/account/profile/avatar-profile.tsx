@@ -1,8 +1,8 @@
+import { useEffect, useState } from "react";
 import { Profile } from "@/types/sb-types";
 import { Database } from "@/types/supabase-types";
 import useUserProfile from "@/utils/api/use-user-profile";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
-import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
@@ -115,14 +115,9 @@ export default function ProfileAvatar(): JSX.Element {
       <>
         <div>
           <img
-            src={
-              avatarUrl
-                ? CDNURL + avatarUrl
-                : "/assets/images/users/user-img.png"
-            }
-            // src={"/assets/images/users/user-img.png"}
-            alt="Filamu User"
-            className="h-[120px] w-[120px] rounded-full"
+            src={avatarUrl ? CDNURL + avatarUrl : "/assets/filamu/avatar.png"}
+            alt={`Filamu member ${user?.id}`}
+            className="h-[120px] w-[120px] rounded-full object-cover"
           />
         </div>
         <input

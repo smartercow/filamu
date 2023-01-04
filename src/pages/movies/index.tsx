@@ -1,5 +1,5 @@
-import Contents from "@/components/page/contents/contents";
+import ContentsPage from "@/components/page/shared/page-contents";
 
-const IndexPage = () => <Contents contentType="movie" />;
+const IndexPage = () => <ContentsPage contentType="movie" />;
 
 export default IndexPage;

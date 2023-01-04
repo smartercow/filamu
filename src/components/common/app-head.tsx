@@ -1,9 +1,13 @@
 import Head from "next/head";
 
-export function AppHead(): JSX.Element {
+type AppHeadProps = {
+  title?: string;
+};
+
+export function AppHead({ title }: AppHeadProps): JSX.Element {
   return (
     <Head>
-      <title>Filamu</title>
+      <title>{title ? `${title} - ` : ""}Filamu</title>
       <meta
         name="viewport"
         content="width=device-width,initial-scale=1, maximum-scale=1,user-scalable=0,viewport-fit=cover"

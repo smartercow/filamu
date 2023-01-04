@@ -2,13 +2,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
-import { slides } from "@/lib/data";
 import { useWindow } from "@/lib/context/window-context";
 import { SlideContent } from "./swiperslide";
-import HeadingSlider from "./heading-slider";
 import { contentData } from "@/lib/data/content";
 import { useState } from "react";
-import { Trend, Trends } from "@/lib/data/genres";
+import { Trends } from "@/lib/data/genres";
+import HeadingSlider from "./heading-slider";
 
 type OverviewProps = {
   title: string;
@@ -42,9 +41,6 @@ export function OverviewSlider({
     },
   };
 
-  console.log("trend", trend);
-  console.log("trends", Trends[2]);
-
   return (
     <>
       <div className="w-full">
@@ -52,7 +48,7 @@ export function OverviewSlider({
           slidesPerView={width < 560 ? 2 : width < 768 ? 3 : 4}
           spaceBetween={20}
           autoplay={{
-            delay: 10000,
+            delay: category === "recommended" ? 4000 : 7000,
             // disableOnInteraction: false,
           }}
           modules={[Autoplay, Pagination]}

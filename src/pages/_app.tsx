@@ -49,12 +49,12 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   }, [router.asPath]);
 
   return (
-    <SessionContextProvider
-      supabaseClient={supabaseClient}
-      initialSession={pageProps.initialSession}
-    >
-      <QueryClientProvider client={queryClient}>
-        <WindowContextProvider>
+    <WindowContextProvider>
+      <SessionContextProvider
+        supabaseClient={supabaseClient}
+        initialSession={pageProps.initialSession}
+      >
+        <QueryClientProvider client={queryClient}>
           <RecoilRoot>
             <UserContextProvider>
               <>
@@ -68,9 +68,9 @@ function MyApp({ Component, pageProps, router }: AppProps) {
               <ToastContainer />
             </UserContextProvider>
           </RecoilRoot>
-        </WindowContextProvider>
-      </QueryClientProvider>
-    </SessionContextProvider>
+        </QueryClientProvider>
+      </SessionContextProvider>
+    </WindowContextProvider>
   );
 }
 

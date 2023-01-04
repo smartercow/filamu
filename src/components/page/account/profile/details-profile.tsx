@@ -1,10 +1,10 @@
+import useUserProfile from "@/utils/api/use-user-profile";
+import { useEffect, useState } from "react";
+import { useUser, useSupabaseClient } from "@supabase/auth-helpers-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Profile } from "@/types/sb-types";
 import { Database } from "@/types/supabase-types";
-import useUserProfile from "@/utils/api/use-user-profile";
-import { useUser, useSupabaseClient } from "@supabase/auth-helpers-react";
-import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 

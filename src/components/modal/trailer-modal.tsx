@@ -1,7 +1,7 @@
 import Modal from "./modal";
 import YoutubeEmbed from "@/lib/helpers/youtube-embed";
-import { TrailerModalState } from "@/lib/states/common-state";
 import { useRecoilState } from "recoil";
+import { TrailerModalState } from "@/lib/states/common-state";
 import { HeroIcon } from "../ui/hero-icon";
 
 export default function TrailerModal(): JSX.Element {

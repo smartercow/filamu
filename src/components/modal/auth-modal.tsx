@@ -1,8 +1,7 @@
-import { useRecoilState } from "recoil";
-import { useEffect, useState } from "react";
-
 import Modal from "./modal";
-import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
+import { useSession } from "@supabase/auth-helpers-react";
 import { AuthModalState } from "@/lib/states/auth-state";
 import AuthLogin from "../auth/auth-login";
 import AuthResetPassword from "../auth/auth-resetpassword";
@@ -13,7 +12,6 @@ import { Button } from "../ui/button";
 
 export default function AuthModal() {
   const session = useSession();
-  const supabase = useSupabaseClient();
   const [authModalState, setAuthModalState] = useRecoilState(AuthModalState);
   const [passReset, setPassReset] = useState(false);
 

@@ -25,8 +25,8 @@ const NavLinksDropdown = [
     href: "/movies",
   },
   {
-    title: "Series",
-    href: "/series",
+    title: "TV Series",
+    href: "/tv-series",
   },
   {
     title: "TV Shows",

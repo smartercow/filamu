@@ -10,9 +10,9 @@
   font-family: "Inter", sans-serif;
 }
 
-body {
+/* .overflow-overlay {
   overflow: overlay;
-}
+} */
 
 @layer base {
   body {
@@ -34,7 +34,7 @@ body {
   }
 
   .app-width-handler {
-    @apply mx-auto max-w-6xl pl-4 pr-6;
+    @apply mx-auto max-w-6xl pl-4 pr-8;
   }
 
   /* MAIN BUTTON */

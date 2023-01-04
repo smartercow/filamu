@@ -1,9 +1,9 @@
+import { useMemo } from "react";
 import { SubscriptionModalState } from "@/lib/states/subscription-state";
 import { Database } from "@/types/supabase-types";
 import useDashboardOverview from "@/utils/api/use-dashboard-overview";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
-import React, { useMemo } from "react";
 import { useRecoilState } from "recoil";
 import AccountSubscriptionTakeover from "../subscription/takeover/account-subscription-takeover";
 import Modal from "./modal";
@@ -27,13 +27,13 @@ export default function SubscriptionModal(): JSX.Element {
 
   const supabaseClient = useSupabaseClient<Database>();
 
-  const handleClose = () => {
+  /*   const handleClose = () => {
     setSubscriptionModal((prev) => ({
       ...prev,
       open: false,
       view: "confirm",
     }));
-  };
+  }; */
 
   const handleSignout = async () => {
     setSubscriptionModal((prev) => ({
@@ -54,14 +54,14 @@ export default function SubscriptionModal(): JSX.Element {
         <AccountSubscriptionTakeover currentAccount={currentAccount} />
 
         <div className="flex justify-center border-t bg-[#f6faff] p-4">
-          <div>
+          <>
             <button
               className="rounded border-none py-1 px-2 font-bold uppercase text-main-darkblue transition-all duration-300 hover:bg-red-400/60 hover:text-white"
               onClick={handleSignout}
             >
               Log out
             </button>
-          </div>
+          </>
         </div>
       </div>
     </Modal>
