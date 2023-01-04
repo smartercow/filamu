@@ -51,26 +51,6 @@ export default function Contents({
             </div>
           ))}
       </div>
-      <div className="flex w-full items-center justify-center py-3 md:py-6">
-        <>
-          <Button
-            className="py-1.5 px-3 md:py-2 md:px-6"
-            onClick={() =>
-              toast.error(
-                `No more ${
-                  contentType === "movie"
-                    ? "movies"
-                    : contentType === "tv-serie"
-                    ? "TV series"
-                    : "TV shows"
-                }!`
-              )
-            }
-          >
-            Load more
-          </Button>
-        </>
-      </div>
     </ContentsContainer>
   );
 }

@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { SliderProps } from "@/lib/data";
-import { Button } from "../../ui/button";
 import cn from "clsx";
+import { Button } from "../../ui/button";
 import { CustomIcon } from "../../ui/custom-icon";
 import { Content } from "@/lib/data/content";
 import { useRouter } from "next/router";

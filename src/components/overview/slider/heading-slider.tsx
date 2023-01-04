@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { OverviewHeading } from "../overview";
-import type { OverviewHeadingProps } from "../overview";
 import { TrendProps } from "./overview-slider";
 import { Trends } from "@/lib/data/genres";
 

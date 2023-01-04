@@ -5,6 +5,8 @@ import FilterContents from "./filter-contens";
 import { ContentsHeading } from "./heading-contents";
 import Contents from "../contents/contents";
 import type { ContainerProps } from "@/components/container/container";
+import { Button } from "@/components/ui/button";
+import { toast } from "react-toastify";
 
 export type ContentsPageProps = {
   contentType?: string;
@@ -21,7 +23,9 @@ export function ContentsContainer(
             ? "Movies"
             : props.contentType === "tv-serie"
             ? "TV Series"
-            : "TV Shows"
+            : props.contentType === "tv-show"
+            ? "TV Shows"
+            : "Celebrities"
         }
       />
       <TopContainer>
@@ -32,6 +36,28 @@ export function ContentsContainer(
         <div className="space-y-8">
           <FilterContents contentType={props.contentType} />
           <>{props.children}</>
+          <div className="flex w-full items-center justify-center py-3 md:py-6">
+            <>
+              <Button
+                className="py-1.5 px-3 md:py-2 md:px-6"
+                onClick={() =>
+                  toast.error(
+                    `Can load more ${
+                      props.contentType === "movie"
+                        ? "movies"
+                        : props.contentType === "tv-serie"
+                        ? "TV series"
+                        : props.contentType === "tv-show"
+                        ? "TV shows"
+                        : "celebrities"
+                    } because this is just a demo!`
+                  )
+                }
+              >
+                Load more
+              </Button>
+            </>
+          </div>
         </div>
         <div className="w-72">aside her!</div>
       </MainContainer>
