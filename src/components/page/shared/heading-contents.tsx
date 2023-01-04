@@ -27,7 +27,7 @@ export function ContentsHeading({
               className="h-3.5 w-3.5"
             />
           </li>
-          <li className="uppercase">
+          <li className="uppercase text-main-gray">
             {contentType === "movie"
               ? "Movies"
               : contentType === "tv-serie"

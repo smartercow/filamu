@@ -42,7 +42,7 @@ export default function Header(): JSX.Element {
       <nav className="">
         <div
           className={cn(
-            "app-width-handler flex items-center justify-between gap-4 rounded-md py-1",
+            "app-width-handler flex items-center justify-between gap-4 rounded-md py-2",
             path?.startsWith("/movie/title") &&
               "bg-main-darkblue bg-opacity-25",
             path?.startsWith("/tv-serie/title") &&

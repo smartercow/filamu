@@ -141,7 +141,7 @@ export default function Contents({
               {selectedView === "grid" && (
                 <div className="dosis hover-animation absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center bg-black/90 opacity-0 group-hover:opacity-100">
                   <div className="space-y-3 p-2 text-center">
-                    <h1 className="text-lg font-bold uppercase text-white line-clamp-2 md:text-xl">
+                    <h1 className="text-lg font-bold uppercase text-white line-clamp-2">
                       {content.title}
                     </h1>
                     <p className="text-left text-sm text-main-gray line-clamp-2 md:text-base md:line-clamp-3">
@@ -152,7 +152,7 @@ export default function Contents({
                         hasIcon
                         btnIcon="ChevronRightIcon"
                         className="py-2 px-3 md:px-4"
-                        textStyle="text-xs md:text-sm"
+                        textStyle="text-xs"
                         onClick={() => handleRef(content.video_id)}
                       >
                         Watch now

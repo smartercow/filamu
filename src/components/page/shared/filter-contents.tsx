@@ -17,14 +17,13 @@ export default function FilterContents({
         <p>
           Found{" "}
           <span className="font-medium text-main-blue-light">
-            1,409{" "}
             {contentType === "movie"
-              ? "movies"
+              ? "1409 movies"
               : contentType === "tv-serie"
-              ? "TV series"
+              ? "582 TV series"
               : contentType === "tv-show"
-              ? "TV shows"
-              : contentType === "celebrities" && "celebrities"}{" "}
+              ? "692 TV shows"
+              : contentType === "celebrities" && "1178 celebrities"}{" "}
           </span>
           in total
         </p>
@@ -34,6 +33,7 @@ export default function FilterContents({
           <p className="text-main-gray">Sort by:</p>
         </div>
         <RadixSelect
+          contentType={contentType}
           setSelectedSort={setSelectedSort}
           selectedSort={selectedSort}
         />

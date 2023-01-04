@@ -15,7 +15,9 @@ export function DownloadAside(): JSX.Element {
           </p>
         </div>
         <>
-          <Button className="px-3 py-2">Download the app</Button>
+          <Button className="px-3 py-2" textStyle="text-xs">
+            Download the app
+          </Button>
         </>
       </div>
     </div>

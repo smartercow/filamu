@@ -1,16 +1,16 @@
 import { AppHead } from "@/components/common/app-head";
 import { MainContainer, TopContainer } from "@/components/container/container";
 import Search from "@/components/search/search";
-import FilterContents from "./filter-contens";
+import FilterContents from "./filter-contents";
 import { ContentsHeading } from "./heading-contents";
 import Contents from "../contents/contents";
-import type { ContainerProps } from "@/components/container/container";
 import { Button } from "@/components/ui/button";
 import { toast } from "react-toastify";
 import { useState } from "react";
 import Aside from "@/components/aside/aside";
 import ContentSearchAside from "@/components/aside/contentsearch-aside";
 import { DownloadAside } from "@/components/aside/download-aside";
+import type { ContainerProps } from "@/components/container/container";
 
 export type ContentsPageProps = {
   className?: string;
@@ -57,7 +57,7 @@ export function ContentsContainer(
                 className="py-1.5 px-3 md:py-2 md:px-6"
                 onClick={() =>
                   toast.error(
-                    `Can load more ${
+                    `Can't load more ${
                       props.contentType === "movie"
                         ? "movies"
                         : props.contentType === "tv-serie"
@@ -74,7 +74,7 @@ export function ContentsContainer(
             </>
           </div>
         </div>
-        <Aside>
+        <Aside className="w-full max-w-[290px]">
           <div>
             <ContentSearchAside contentType={props.contentType} />
             <DownloadAside />

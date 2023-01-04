@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { OverviewHeading } from "../overview";
-import { TrendProps } from "./overview-slider";
+import { TrendProps } from "./slider";
 import { Trends } from "@/lib/data/genres";
 
 const trends = [
@@ -10,7 +10,7 @@ const trends = [
   { name: "#Top Rated", trend: Trends[3].href },
 ];
 
-console.log("trends", trends[2].trend);
+console.log("trends11", trends[0].trend);
 
 export default function HeadingSlider(props: TrendProps): JSX.Element {
   return (
@@ -19,7 +19,7 @@ export default function HeadingSlider(props: TrendProps): JSX.Element {
 
       <div className="flex justify-between gap-1 whitespace-nowrap text-xs font-semibold xs:text-sm sm:justify-start sm:gap-5">
         {trends.map((t) => {
-          if (props.trend[0] === t.trend)
+          if (props.trend === t.trend)
             return (
               <div
                 key={t.trend}

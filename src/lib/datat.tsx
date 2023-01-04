@@ -10,70 +10,42 @@ export const mediaData: MediaOverviewProps[] = [
     title: "Black Panther: Wakanda Forever",
     embedId: "c1nYF21FGS4",
     duration: "2:30",
-    thumbnail:
-      "https://assets-prd.ignimgs.com/2022/11/07/wakanda-blogroll-1667853887859.jpg",
+    thumbnail: "/assets/content/trailers/1-black-panther-wakanda-forever.webp",
   },
   {
-    title: "Black Panther: Wakanda Forever",
-    embedId: "gbug3zTm3Ws",
-    duration: "2:30",
-    thumbnail:
-      "https://assets-prd.ignimgs.com/2022/11/07/wakanda-blogroll-1667853887859.jpg",
+    title: "Glamour Girls",
+    embedId: "XnyuqAJ9_kI",
+    duration: "1:55",
+    thumbnail: "/assets/content/trailers/2-glamour-girls.jpg",
   },
   {
-    title: "Black Panther: Wakanda Forever",
+    title: "Young, Famous & African",
     embedId: "e3N2l_TCQXuw",
-    duration: "2:30",
-    thumbnail:
-      "https://assets-prd.ignimgs.com/2022/11/07/wakanda-blogroll-1667853887859.jpg",
+    duration: "1:50",
+    thumbnail: "/assets/content/trailers/3-young-famous-african.jpg",
   },
   {
-    title: "Black Panther: Wakanda Forever",
-    embedId: "c1nYF213FGS4",
-    duration: "2:30",
-    thumbnail:
-      "https://assets-prd.ignimgs.com/2022/11/07/wakanda-blogroll-1667853887859.jpg",
+    title: "Beasts of No Nation",
+    embedId: "2xb9Ty-1fr",
+    duration: "1:40",
+    thumbnail: "/assets/content/trailers/4-beasts-of-no-nation.jpg",
   },
   {
-    title: "Black Panther: Wakanda Forever",
-    embedId: "c1nYF21F4GS4",
-    duration: "2:30",
-    thumbnail:
-      "https://assets-prd.ignimgs.com/2022/11/07/wakanda-blogroll-1667853887859.jpg",
+    title: "Black Lightning",
+    embedId: "3LAUGA01mUc",
+    duration: "2:10",
+    thumbnail: "/assets/content/trailers/5-black-lightning.jpg",
   },
   {
-    title: "Black Panther: Wakanda Forever",
-    embedId: "c1nY1F212FGS4",
-    duration: "2:30",
-    thumbnail:
-      "https://assets-prd.ignimgs.com/2022/11/07/wakanda-blogroll-1667853887859.jpg",
+    title: "The Get Down",
+    embedId: "FYcVrWDOiao",
+    duration: "1:38",
+    thumbnail: "/assets/content/trailers/6-the-get-down.jpg",
   },
   {
-    title: "Black Panther: Wakanda Forever",
-    embedId: "e3Nl_TC4QXuw",
-    duration: "2:30",
-    thumbnail:
-      "https://assets-prd.ignimgs.com/2022/11/07/wakanda-blogroll-1667853887859.jpg",
-  },
-  {
-    title: "Black Panther: Wakanda Forever",
-    embedId: "c1nYF21FgfGS4",
-    duration: "2:30",
-    thumbnail:
-      "https://assets-prd.ignimgs.com/2022/11/07/wakanda-blogroll-1667853887859.jpg",
-  },
-  {
-    title: "Black Panther: Wakanda Forever",
-    embedId: "c1nYF21axFGS4",
-    duration: "2:30",
-    thumbnail:
-      "https://assets-prd.ignimgs.com/2022/11/07/wakanda-blogroll-1667853887859.jpg",
-  },
-  {
-    title: "Black Panther: Wakanda Forever",
-    embedId: "c1nYF21FliGS4",
-    duration: "2:30",
-    thumbnail:
-      "https://assets-prd.ignimgs.com/2022/11/07/wakanda-blogroll-1667853887859.jpg",
+    title: "What Happened, Miss Simone?",
+    embedId: "DeevW_zYojY",
+    duration: "1:43",
+    thumbnail: "/assets/content/trailers/7-what-happened-miss-simone.jpg",
   },
 ];

@@ -3,7 +3,7 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import { useWindow } from "@/lib/context/window-context";
-import { SlideContent } from "./swiperslide";
+import { SlideContent } from "./swiperslide-slider";
 import { contentData } from "@/lib/data/content";
 import { useState } from "react";
 import { Trends } from "@/lib/data/genres";
@@ -48,7 +48,12 @@ export function OverviewSlider({
           slidesPerView={width < 560 ? 2 : width < 768 ? 3 : 4}
           spaceBetween={20}
           autoplay={{
-            delay: category === "recommended" ? 4000 : 7000,
+            delay:
+              category === "recommended"
+                ? 4000
+                : category === "recommended"
+                ? 6300
+                : 7000,
             // disableOnInteraction: false,
           }}
           modules={[Autoplay, Pagination]}

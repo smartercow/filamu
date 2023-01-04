@@ -32,7 +32,7 @@ const legalLinks = [
 const accountLinks = [
   { name: "My Account", href: "/account/profile" },
   { name: "Gift Cards", href: "/account/gift-cards" },
-  { name: "Bookmarks", href: "/account/bookmarks" },
+  { name: "Favorites", href: "/account/favorites" },
   { name: "User Guide", href: "/account/user-guide" },
 ];
 

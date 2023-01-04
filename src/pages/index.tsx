@@ -6,7 +6,7 @@ import {
 } from "@/components/layout/common-layout";
 import { OverviewMedia } from "@/components/overview/media/media";
 import NewsOverview from "@/components/overview/news/news";
-import { OverviewSlider } from "@/components/overview/slider/overview-slider";
+import { OverviewSlider } from "@/components/overview/slider/slider";
 import Search from "@/components/search/search";
 
 export default function HomePage(): JSX.Element {

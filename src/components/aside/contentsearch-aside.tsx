@@ -14,8 +14,10 @@ export default function ContentSearchAside({
   const [gerne, setGerne] = useState("");
   const [ratingRange, setRatingRange] = useState("");
   const [releaseyear, setReleaseYear] = useState("");
+  const [loading, setLoading] = useState(false);
+
   return (
-    <div className="min-w-[280px] max-w-[310] space-y-5">
+    <div className="w-full min-w-[280px] space-y-5">
       <AsideHeading
         title={`Search for a ${
           contentType === "movie"
@@ -27,28 +29,20 @@ export default function ContentSearchAside({
             : "celebrity"
         }`}
       />
-      <div className="space-y-4 border-2 border-main-blue bg-main-blue-sec p-4">
+      <div className="space-y-3 border-2 border-main-blue bg-main-blue-sec p-4">
         <Input
           noColon
           name="contentname_search"
-          label={`${
-            contentType === "movie"
-              ? "Movie"
-              : contentType === "tv-serie"
-              ? "TV Serie"
-              : contentType === "tv-show"
-              ? "TV Show"
-              : "Celebrity"
-          } name`}
+          label="Name"
           type="text"
-          placeholder={`${
+          placeholder={`Enter ${
             contentType === "movie"
-              ? "Movie"
+              ? "movie"
               : contentType === "tv-serie"
-              ? "TV Serie"
+              ? "TV serie"
               : contentType === "tv-show"
-              ? "TV Show"
-              : "Celebrity"
+              ? "TV show"
+              : "celebrity"
           } name`}
           value={contentName}
           className="dosis w-full rounded-sm border-none bg-main-blue py-2 pl-2 font-normal"
@@ -95,7 +89,7 @@ export default function ContentSearchAside({
             />
           </div>
         </div>
-        <div className="flex items-center">
+        <div className="mb-4 flex items-center">
           <div className="h-7 w-[86px]">
             <label
               htmlFor="releaseyear_search"
@@ -115,9 +109,17 @@ export default function ContentSearchAside({
             />
           </div>
         </div>
-        <>
-          <Button className="w-full rounded-sm py-3">Submit</Button>
-        </>
+        <div>
+          <div className=" mt-2">
+            <Button
+              loading={loading}
+              className="w-full rounded-sm py-3"
+              onClick={() => setLoading(true)}
+            >
+              Submit
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );

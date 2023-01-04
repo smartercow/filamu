@@ -17,11 +17,12 @@ type SelectItemProps = {
 
 const RadixSelect = ({
   className,
+  contentType,
   selectedSort,
   setSelectedSort,
 }: ContentsPageProps) => (
   <Select.Root value={selectedSort} onValueChange={setSelectedSort}>
-    <Select.Trigger className="SelectTrigger" aria-label="soryby">
+    <Select.Trigger className="SelectTrigger" aria-label="sortby">
       <Select.Value placeholder="Sort by..." />
       <Select.Icon className="SelectIcon">
         <ChevronDownIcon />
@@ -33,23 +34,85 @@ const RadixSelect = ({
           <ChevronUpIcon />
         </Select.ScrollUpButton>
         <Select.Viewport className="SelectViewport">
-          <Select.Group>
-            <Select.Label className="SelectLabel">Popularity</Select.Label>
-            <SelectItem value="pop_desc">Popularity Descneding</SelectItem>
-            <SelectItem value="pop_asc">Popularity Ascending</SelectItem>
-          </Select.Group>
-          <Select.Separator className="SelectSeparator" />
-          <Select.Group>
-            <Select.Label className="SelectLabel">Rating</Select.Label>
-            <SelectItem value="rat_desc">Rating Descneding</SelectItem>
-            <SelectItem value="rat_asc">Rating Ascending</SelectItem>
-          </Select.Group>
-          <Select.Separator className="SelectSeparator" />
-          <Select.Group>
-            <Select.Label className="SelectLabel">Release date</Select.Label>
-            <SelectItem value="rda_desc">Release date Descneding</SelectItem>
-            <SelectItem value="rda_asc">Release date Ascending</SelectItem>
-          </Select.Group>
+          {contentType === "movie" ||
+            contentType === "tv-serie" ||
+            (contentType === "tv-show" && (
+              <>
+                <Select.Group>
+                  <Select.Label className="SelectLabel">Popular</Select.Label>
+                  <SelectItem value="pop_desc_content">
+                    Popularity Descneding
+                  </SelectItem>
+                  <SelectItem value="pop_asc_content">
+                    Popularity Ascending
+                  </SelectItem>
+                </Select.Group>
+                <Select.Separator className="SelectSeparator" />
+                <Select.Group>
+                  <Select.Label className="SelectLabel">Rating</Select.Label>
+                  <SelectItem value="rat_desc_content">
+                    Rating Descneding
+                  </SelectItem>
+                  <SelectItem value="rat_asc_content">
+                    Rating Ascending
+                  </SelectItem>
+                </Select.Group>
+                <Select.Separator className="SelectSeparator" />
+                <Select.Group>
+                  <Select.Label className="SelectLabel">
+                    Release date
+                  </Select.Label>
+                  <SelectItem value="rda_desc_content">
+                    Release date Descneding
+                  </SelectItem>
+                  <SelectItem value="rda_asc_content">
+                    Release date Ascending
+                  </SelectItem>
+                </Select.Group>
+              </>
+            ))}
+          {contentType === "celebrities" && (
+            <>
+              <Select.Group>
+                <Select.Label className="SelectLabel">Popular</Select.Label>
+                <SelectItem value="pop_desc_celeb">
+                  Popularity Descneding
+                </SelectItem>
+                <SelectItem value="pop_asc_celeb">
+                  Popularity Ascending
+                </SelectItem>
+              </Select.Group>
+              <Select.Separator className="SelectSeparator" />
+              <Select.Group>
+                <Select.Label className="SelectLabel">Roles</Select.Label>
+                <SelectItem value="mostroles_desc">
+                  Most roles Descneding
+                </SelectItem>
+                <SelectItem value="mostroles_asc">
+                  Most roles Ascending
+                </SelectItem>
+              </Select.Group>
+            </>
+          )}
+          {contentType === "news" && (
+            <>
+              <Select.Group>
+                <Select.Label className="SelectLabel">Recent</Select.Label>
+                <SelectItem value="recent_news">
+                  Recent news Descneding
+                </SelectItem>
+                <SelectItem value="recent_news">
+                  Recent news Ascending
+                </SelectItem>
+              </Select.Group>
+              <Select.Separator className="SelectSeparator" />
+              <Select.Group>
+                <Select.Label className="SelectLabel">Views</Select.Label>
+                <SelectItem value="rat_desc">Most read Descneding</SelectItem>
+                <SelectItem value="rat_asc">Most read Ascending</SelectItem>
+              </Select.Group>
+            </>
+          )}
         </Select.Viewport>
         <Select.ScrollDownButton className="SelectScrollButton">
           <ChevronDownIcon />
