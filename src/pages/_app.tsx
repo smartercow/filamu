@@ -2,6 +2,8 @@ import "@/styles/globals.scss";
 import "@/styles/main.scss";
 import "@/styles/utils.scss";
 import "@/styles/radix-ui/navigation-menu.css";
+import "@/styles/radix-ui/select.css";
+import "@/styles/radix-ui/aside_search.css";
 import "@fontsource/dosis/200.css";
 import "@fontsource/dosis/300.css";
 import "@fontsource/dosis/400.css";

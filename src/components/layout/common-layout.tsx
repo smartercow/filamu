@@ -22,7 +22,7 @@ export function OverviewSliderLayout({ children }: LayoutProps): JSX.Element {
   return (
     <MainContainer className="dosis flex justify-center gap-5 py-10 md:py-12 lg:justify-between">
       {children}
-      <Aside>
+      <Aside className="w-72">
         <DownloadAside />
         <CelebritiesSpotligt />
       </Aside>
@@ -34,7 +34,7 @@ export function OverviewNewsLayout({ children }: LayoutProps): JSX.Element {
   return (
     <MainContainer className="dosis flex justify-center gap-5 py-10 md:py-12 lg:justify-between">
       {children}
-      <Aside>
+      <Aside className="w-72">
         <FacebookAside />
         <TwitterAside />
       </Aside>

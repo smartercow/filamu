@@ -1,10 +1,5 @@
 import { atom } from "recoil";
 
-/* export const ProtectedPathState = atom({
-  key: "protectedPathState",
-  default: false,
-}); */
-
 interface TrailerModalState {
   open: boolean;
   title?: string;
@@ -20,4 +15,18 @@ const defaultModalState: TrailerModalState = {
 export const TrailerModalState = atom<TrailerModalState>({
   key: "trailerModalState",
   default: defaultModalState,
+});
+
+// ------------------------------
+interface SortByState {
+  value?: string;
+}
+
+const defaultSortByState: SortByState = {
+  value: "pop_desc",
+};
+
+export const SortByState = atom<SortByState>({
+  key: "sortByState",
+  default: defaultSortByState,
 });

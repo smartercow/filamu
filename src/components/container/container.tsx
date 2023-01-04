@@ -27,7 +27,7 @@ export function TopContainer({
   return (
     <MainContainer
       mcn={cn(
-        "top-container-bg pt-16 pb-1 sm:pt-20 sm:pb-4 md:pt-24 md:pb-6 lg:pt-24 lg:pb-8 xl:pb-12 w-full",
+        "top-container-bg pt-16 pb-1 sm:pt-20 sm:pb-4 md:pt-24 md:pb-6 lg:pt-24 lg:pb-8 w-full",
         mcn
       )}
       className={className}

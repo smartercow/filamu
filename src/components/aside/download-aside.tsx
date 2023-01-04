@@ -2,7 +2,7 @@ import { Button } from "../ui/button";
 
 export function DownloadAside(): JSX.Element {
   return (
-    <div className="download-app mt-10 w-full overflow-hidden rounded-md">
+    <div className="download-app mt-10 w-full max-w-[310px] overflow-hidden rounded-md">
       <div className="space-y-6 bg-black/80 pb-4 text-center">
         <div className="w-full rounded-t-md bg-main-blue/70 py-2">
           <h1 className="text font-semibold uppercase">Watch anywhere</h1>

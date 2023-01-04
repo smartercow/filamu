@@ -1,15 +1,16 @@
-import TopContainerContents from "../shared/topcontainer-contents";
-import { MainContainer } from "@/components/container/container";
-import ContentsPage, {
-  ContentsContainer,
-  ContentsPageProps,
-} from "../shared/page-contents";
+import { useState } from "react";
+import { ContentsContainer, ContentsPageProps } from "../shared/page-contents";
 
 export default function CelebritiesPage({
   contentType,
 }: ContentsPageProps): JSX.Element {
+  const [selectedSort, setSelectedSort] = useState("pop_desc");
   return (
-    <ContentsContainer contentType={contentType}>
+    <ContentsContainer
+      contentType={contentType}
+      selectedSort={selectedSort}
+      setSelectedSort={setSelectedSort}
+    >
       <div className="flex gap-4 bg-main-blue-sec  text-main-gray">
         <div>
           <img

@@ -5,9 +5,9 @@ export function ContentsHeading({
   contentType,
 }: ContentsPageProps): JSX.Element {
   return (
-    <div className="my-10 h-full space-y-5">
+    <div className="my-4 h-full space-y-5 md:my-8">
       <div className="text-center">
-        <h1 className="dosis text-4xl font-bold uppercase">
+        <h1 className="dosis text-2xl font-bold uppercase md:text-3xl lg:text-4xl">
           {contentType === "movie"
             ? "Movies list"
             : contentType === "tv-serie"

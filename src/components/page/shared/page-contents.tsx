@@ -7,9 +7,18 @@ import Contents from "../contents/contents";
 import type { ContainerProps } from "@/components/container/container";
 import { Button } from "@/components/ui/button";
 import { toast } from "react-toastify";
+import { useState } from "react";
+import Aside from "@/components/aside/aside";
+import ContentSearchAside from "@/components/aside/contentsearch-aside";
+import { DownloadAside } from "@/components/aside/download-aside";
 
 export type ContentsPageProps = {
+  className?: string;
   contentType?: string;
+  selectedSort?: string;
+  selectedView?: string;
+  setSelectedSort?: (value: string) => void;
+  setSelectedView?: (value: string) => void;
 };
 
 export function ContentsContainer(
@@ -32,9 +41,15 @@ export function ContentsContainer(
         <Search />
         <ContentsHeading contentType={props.contentType} />
       </TopContainer>
-      <MainContainer className="flex gap-10 py-10">
-        <div className="space-y-8">
-          <FilterContents contentType={props.contentType} />
+      <MainContainer className="flex justify-between gap-10 py-6 md:py-10">
+        <div className="w-full space-y-8 lg:max-w-3xl">
+          <FilterContents
+            contentType={props.contentType}
+            selectedSort={props.selectedSort}
+            setSelectedSort={props.setSelectedSort}
+            selectedView={props.selectedView}
+            setSelectedView={props.setSelectedView}
+          />
           <>{props.children}</>
           <div className="flex w-full items-center justify-center py-3 md:py-6">
             <>
@@ -59,7 +74,12 @@ export function ContentsContainer(
             </>
           </div>
         </div>
-        <div className="w-72">aside her!</div>
+        <Aside>
+          <div>
+            <ContentSearchAside contentType={props.contentType} />
+            <DownloadAside />
+          </div>
+        </Aside>
       </MainContainer>
     </div>
   );
@@ -68,9 +88,18 @@ export function ContentsContainer(
 export default function ContentsPage({
   contentType,
 }: ContentsPageProps): JSX.Element {
+  const [selectedSort, setSelectedSort] = useState("pop_desc");
+  const [selectedView, setSelectedView] = useState("grid");
+
   return (
     <main>
-      <Contents contentType={contentType} />
+      <Contents
+        contentType={contentType}
+        setSelectedSort={setSelectedSort}
+        selectedSort={selectedSort}
+        selectedView={selectedView}
+        setSelectedView={setSelectedView}
+      />
     </main>
   );
 }

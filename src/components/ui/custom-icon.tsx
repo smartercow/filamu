@@ -14,6 +14,7 @@ const Icons = {
   StarIcon,
   AppleIcon,
   GoogleIcon,
+  SquaresIcon,
   StarSecIcon,
   SpinnerIcon,
   TwitterIcon,
@@ -55,6 +56,96 @@ function StarSecIcon({ className }: IconProps): JSX.Element {
           d="M6.4636 7.94155C6.54393 7.88563 6.59749 7.77377 6.57071 7.66192L6.14226 5.11727L7.90962 3.32762C7.98996 3.24373 8.01674 3.13188 7.98996 3.04799C7.96318 2.93614 7.88284 2.88021 7.77573 2.85225L5.33891 2.48873L4.241 0.167779C4.18745 0.0838897 4.10711 0 4 0C3.89289 0 3.81255 0.0559265 3.759 0.167779L2.66109 2.48873L0.224268 2.85225C0.117155 2.85225 0.03682 2.93614 0.0100418 3.04799C-0.0167364 3.15984 0.0100421 3.2717 0.0903768 3.32762L1.85774 5.11727L1.42929 7.66192C1.40251 7.77377 1.45607 7.88563 1.5364 7.94155C1.61674 7.99748 1.72385 8.02544 1.83096 7.96951L4.02678 6.7671L6.22259 7.96951C6.24937 7.99748 6.30293 7.99748 6.35648 7.99748C6.35648 7.99748 6.41004 7.99748 6.4636 7.94155Z"
           fill="#b9c4df"
         ></path>
+      </g>
+    </svg>
+  );
+}
+
+function SquaresIcon({ className }: IconProps): JSX.Element {
+  return (
+    <svg className={cn("fill-current", className)} viewBox="0 0 24 24">
+      <g>
+        <rect
+          width="112"
+          height="112"
+          x="48"
+          y="48"
+          fill="fill-current"
+          rx="8"
+          ry="8"
+        />
+        <rect
+          width="112"
+          height="112"
+          x="200"
+          y="48"
+          fill="fill-current"
+          rx="8"
+          ry="8"
+        />
+        <rect
+          width="112"
+          height="112"
+          x="352"
+          y="48"
+          fill="fill-current"
+          rx="8"
+          ry="8"
+        />
+        <rect
+          width="112"
+          height="112"
+          x="48"
+          y="200"
+          fill="fill-current"
+          rx="8"
+          ry="8"
+        />
+        <rect
+          width="112"
+          height="112"
+          x="200"
+          y="200"
+          fill="fill-current"
+          rx="8"
+          ry="8"
+        />
+        <rect
+          width="112"
+          height="112"
+          x="352"
+          y="200"
+          fill="fill-current"
+          rx="8"
+          ry="8"
+        />
+        <rect
+          width="112"
+          height="112"
+          x="48"
+          y="352"
+          fill="fill-current"
+          rx="8"
+          ry="8"
+        />
+        <rect
+          width="112"
+          height="112"
+          x="200"
+          y="352"
+          fill="fill-current"
+          rx="8"
+          ry="8"
+        />
+        <rect
+          width="112"
+          height="112"
+          x="352"
+          y="352"
+          fill="fill-current"
+          rx="8"
+          ry="8"
+        />
       </g>
     </svg>
   );
