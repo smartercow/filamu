@@ -31,7 +31,7 @@ const RadixSelectData = ({
   data,
   value,
   disabled,
-  dataType,
+  // dataType,
   clasName,
   placeholder,
   onChange,
