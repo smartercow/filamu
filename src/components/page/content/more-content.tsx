@@ -5,7 +5,7 @@ import { OverviewHeading } from "../../overview/overview";
 import { contentData } from "@/lib/data/content";
 import { useRouter } from "next/router";
 import { Button } from "@/components/ui/button";
-import { ContentsPageProps } from "../shared/page-contents";
+import type { ContentsPageProps } from "../shared/page-contents";
 
 export default function ContentPageMore({
   contentType,
