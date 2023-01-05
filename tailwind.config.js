@@ -16,6 +16,7 @@ module.exports = {
         "main-blue-sec": "#0f2133",
         "main-blue-tet": "#06121E",
         "main-blue-for": "#0B1A2A",
+        "main-blue-fiv": "#071829",
         "main-darkblue": "#020d18",
         "link-blue": "#4280bf",
         "main-yellow": "#FFCC00",

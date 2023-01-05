@@ -1,32 +1,36 @@
 import { atom } from "recoil";
 
-interface TrailerModalState {
+interface YoutubeModalState {
   open: boolean;
   title?: string;
   embedId?: string;
 }
 
-const defaultModalState: TrailerModalState = {
+const defaultYoutubeModalState: YoutubeModalState = {
   open: false,
   title: "",
   embedId: "",
 };
 
-export const TrailerModalState = atom<TrailerModalState>({
-  key: "trailerModalState",
-  default: defaultModalState,
+export const YoutubeModalState = atom<YoutubeModalState>({
+  key: "youtubeModalState",
+  default: defaultYoutubeModalState,
 });
 
 // ------------------------------
-interface SortByState {
-  value?: string;
+interface ImageModalState {
+  open: boolean;
+  name?: string;
+  source?: string;
 }
 
-const defaultSortByState: SortByState = {
-  value: "pop_desc",
+const defaultImageModalState: ImageModalState = {
+  open: false,
+  name: "",
+  source: "",
 };
 
-export const SortByState = atom<SortByState>({
-  key: "sortByState",
-  default: defaultSortByState,
+export const ImageModalState = atom<ImageModalState>({
+  key: "imageModalState",
+  default: defaultImageModalState,
 });

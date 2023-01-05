@@ -14,7 +14,9 @@ export function ContentsHeading({
             ? "TV series list"
             : contentType === "tv-show"
             ? "TV shows list"
-            : contentType === "celebrities" && "Celebrities listing"}
+            : contentType === "celebrities"
+            ? "Celebrities listing"
+            : "Filamu news"}
         </h1>
       </div>
       <div className="flex justify-center">
@@ -34,7 +36,9 @@ export function ContentsHeading({
               ? "TV series"
               : contentType === "tv-show"
               ? "TV shows"
-              : contentType === "celebrities" && "Celebrities"}
+              : contentType === "celebrities"
+              ? "Celebrities"
+              : "News"}
           </li>
         </ul>
       </div>

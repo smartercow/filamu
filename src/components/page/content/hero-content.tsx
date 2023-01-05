@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AppHead } from "@/components/common/app-head";
-import { Content, contentData } from "@/lib/data/content";
+import { contentData } from "@/lib/data/content";
 import { useRouter } from "next/router";
 import { Container } from "../../container/container";
 import { Button } from "../../ui/button";
@@ -9,12 +9,13 @@ import { HeroIcon } from "../../ui/hero-icon";
 import { ContentInfo } from "./info-content";
 import { RateContent } from "./rate-content";
 import { useSetRecoilState } from "recoil";
-import { TrailerModalState } from "@/lib/states/common-state";
+import { YoutubeModalState } from "@/lib/states/common-state";
 import { Favorites } from "@/types/sb-types";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import useFavorites from "@/utils/api/use-favorites";
 import { Database } from "@/types/supabase-types";
 import { toast } from "react-toastify";
+import type { Content } from "@/lib/data/content";
 
 type FAVORITE_DATA = {
   id: Favorites["id"];
@@ -30,7 +31,7 @@ export default function ContentHero(): JSX.Element {
   const user = useUser();
   const supabaseClient = useSupabaseClient<Database>();
   const { data: favorite } = useFavorites();
-  const setTrailerModalState = useSetRecoilState(TrailerModalState);
+  const setYoutubeModalState = useSetRecoilState(YoutubeModalState);
   const [content, setContent] = useState<Content | null>(null);
   const [added, setAdded] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -125,7 +126,7 @@ export default function ContentHero(): JSX.Element {
       {router.query && content && (
         <>
           <AppHead title={content.title} />
-          <section
+          <div
             className="relative bg-cover bg-fixed bg-right bg-no-repeat"
             style={{ backgroundImage: `url(${content.splash})` }}
           >
@@ -139,7 +140,7 @@ export default function ContentHero(): JSX.Element {
                           className="flex rounded-full border border-white bg-transparent px-2.5 py-1.5"
                           textStyle="text-xs font-bold"
                           onClick={() =>
-                            setTrailerModalState({
+                            setYoutubeModalState({
                               open: true,
                               title: content.title,
                               embedId: content.trailer,
@@ -230,7 +231,7 @@ export default function ContentHero(): JSX.Element {
               </div>
             </div>
             {/* <div className="movie-page-top-gradient absolute top-0 left-0 h-24 w-full "></div> */}
-          </section>
+          </div>
         </>
       )}
     </>

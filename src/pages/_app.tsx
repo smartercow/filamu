@@ -34,7 +34,8 @@ import AuthModal from "@/components/modal/auth-modal";
 import { RecoilRoot } from "recoil";
 import SubscriptionModal from "@/components/modal/subscription-modal";
 import UserContextProvider from "@/lib/context/user-context";
-import TrailerModal from "@/components/modal/trailer-modal";
+import YoutubeModal from "@/components/modal/youtube-modal";
+import ImageModal from "@/components/modal/image-modal";
 
 const queryClient = new QueryClient();
 
@@ -66,7 +67,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
               </>
               <AuthModal />
               <SubscriptionModal />
-              <TrailerModal />
+              <YoutubeModal />
+              <ImageModal />
               <ToastContainer />
             </UserContextProvider>
           </RecoilRoot>

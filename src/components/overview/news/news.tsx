@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useWindow } from "@/lib/context/window-context";
+import { newsData } from "@/lib/data/news";
 import Link from "next/link";
 import { useState } from "react";
 import { SocialIcon } from "react-social-icons";
@@ -75,8 +76,12 @@ export default function NewsOverview(): JSX.Element {
             </div>
 
             <div className="flex w-full justify-center">
-              <div className="min-w-[170px] overflow-hidden rounded-md">
-                <img src={newsData[0].image} alt="News" />
+              <div className="overflow-hidden rounded-md">
+                <img
+                  src={newsData[0].image}
+                  alt={newsData[0].title}
+                  className="h-72 w-[280px] object-cover object-center"
+                />
               </div>
             </div>
           </div>
@@ -117,7 +122,7 @@ export default function NewsOverview(): JSX.Element {
               <div>
                 <Link
                   className="text-sm font-bold text-link-blue line-clamp-2"
-                  href="/"
+                  href={`/news/${news.link}`}
                 >
                   {news.title}
                 </Link>
@@ -136,55 +141,3 @@ export default function NewsOverview(): JSX.Element {
     </MainContainer>
   );
 }
-
-const newsData = [
-  {
-    id: 1,
-    title:
-      "African cinema is more exciting than ever. Where’s its wider recognition?",
-    image: "/assets/news/news1.png",
-    timestamp: "12 hours ago",
-    description:
-      "Two years ago, “Parasite” director Bong Joon Ho called out American audiences. His charge? Americans don’t know enough about movies outside their own borders. Once you overcome the 1-inch tall barrier of subtitles,” he said, while accepting a Golden Globe award for his film, “you will be introduced to so many more amazing films.",
-    link: "/",
-  },
-  {
-    id: 2,
-    title:
-      "Brie Larson to play first female white house candidate Victoria Woodull in Amazon film",
-    image: "/assets/images/news/blog-it1.jpg",
-    timestamp: "14 hours ago",
-    description:
-      "Exclusive: Amazon Studios has acquired Victoria Woodhull, with Oscar winning Room star Brie Larson polsed to produce, and play the",
-    link: "/",
-  },
-  {
-    id: 3,
-    title: "Hollywood puts Africa in a box",
-    image: "/assets/images/news/blog-it1.jpg",
-    timestamp: "18 hours ago",
-    description:
-      "The issue, in part, is one of perceptions. Many Hollywood executives thought, and continue to think, that no one is interested in seeing films focused on Black and African people, said Moradewun Adejunmobi, a professor at the University of California, Davis, who studies African literature and pop culture.",
-    link: "/",
-  },
-  {
-    id: 4,
-    title:
-      "The award-winning African documentary project that goes inside the lives of migrants",
-    image: "/assets/images/news/blog-it1.jpg",
-    timestamp: "20 hours ago",
-    description:
-      "For far too long the west has been telling stories about and talking on behalf of Africa. However, a new slate of 25 documentary films by African filmmakers called Generation Africa is currently making waves at international film festivals and is set to shift perspectives about migration in and from the continent.",
-    link: "/",
-  },
-  {
-    id: 5,
-    title:
-      "Brie Larson to play first female white house candidate Victoria Woodull in Amazon film",
-    image: "/assets/images/news/blog-it1.jpg",
-    timestamp: "1 day ago",
-    description:
-      "Exclusive: Amazon Studios has acquired Victoria Woodhull, with Oscar winning Room star Brie Larson polsed to produce, and play the",
-    link: "/",
-  },
-];

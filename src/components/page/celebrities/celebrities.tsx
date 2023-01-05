@@ -91,8 +91,8 @@ export default function CelebritiesPage({
                   <h1 className="text-lg font-bold uppercase text-white line-clamp-2">
                     {celeb.name}
                   </h1>
-                  <p className="text-left text-sm text-main-gray line-clamp-2 md:text-base md:line-clamp-3">
-                    {celeb.biography}
+                  <p className="text-center text-sm uppercase text-main-gray line-clamp-2 md:text-base md:line-clamp-3">
+                    {celeb.category}
                   </p>
                   <div>
                     <Button

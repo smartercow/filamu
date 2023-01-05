@@ -10,10 +10,13 @@ import { useState } from "react";
 import Aside from "@/components/aside/aside";
 import ContentSearchAside from "@/components/aside/contentsearch-aside";
 import { DownloadAside } from "@/components/aside/download-aside";
+import NewsAside from "@/components/aside/news-aside";
 import type { ContainerProps } from "@/components/container/container";
 
 export type ContentsPageProps = {
   className?: string;
+  noFilter?: boolean;
+  noLoadMore?: boolean;
   contentType?: string;
   selectedSort?: string;
   selectedView?: string;
@@ -34,7 +37,9 @@ export function ContentsContainer(
             ? "TV Series"
             : props.contentType === "tv-show"
             ? "TV Shows"
-            : "Celebrities"
+            : props.contentType === "celebrities"
+            ? "Celebrities"
+            : props.contentType === "news" && "News"
         }
       />
       <TopContainer>
@@ -43,42 +48,57 @@ export function ContentsContainer(
       </TopContainer>
       <MainContainer className="flex justify-between gap-10 py-6 md:py-10">
         <div className="w-full space-y-8 lg:max-w-3xl">
-          <FilterContents
-            contentType={props.contentType}
-            selectedSort={props.selectedSort}
-            setSelectedSort={props.setSelectedSort}
-            selectedView={props.selectedView}
-            setSelectedView={props.setSelectedView}
-          />
+          {!props.noFilter && (
+            <FilterContents
+              contentType={props.contentType}
+              selectedSort={props.selectedSort}
+              setSelectedSort={props.setSelectedSort}
+              selectedView={props.selectedView}
+              setSelectedView={props.setSelectedView}
+            />
+          )}
           <>{props.children}</>
-          <div className="flex w-full items-center justify-center py-3 md:py-6">
-            <>
-              <Button
-                className="py-1.5 px-3 md:py-2 md:px-6"
-                onClick={() =>
-                  toast.error(
-                    `Can't load more ${
-                      props.contentType === "movie"
-                        ? "movies"
-                        : props.contentType === "tv-serie"
-                        ? "TV series"
-                        : props.contentType === "tv-show"
-                        ? "TV shows"
-                        : "celebrities"
-                    } because this is just a demo!`
-                  )
-                }
-              >
-                Load more
-              </Button>
-            </>
-          </div>
+          {props.contentType !== "news-article" && (
+            <div className="flex w-full items-center justify-center py-3 md:py-6">
+              {!props.noLoadMore && (
+                <>
+                  <Button
+                    className="rounded-sm py-1.5 px-3 md:py-2.5 md:px-6"
+                    onClick={() =>
+                      toast.error(
+                        `Can't load more ${
+                          props.contentType === "movie"
+                            ? "movies"
+                            : props.contentType === "tv-serie"
+                            ? "TV series"
+                            : props.contentType === "tv-show"
+                            ? "TV shows"
+                            : props.contentType === "celebrities"
+                            ? "celebrities"
+                            : props.contentType === "news" && "news"
+                        } because this is just a demo!`
+                      )
+                    }
+                  >
+                    Load more
+                  </Button>
+                </>
+              )}
+            </div>
+          )}
         </div>
         <Aside className="w-full max-w-[290px]">
-          <div>
-            <ContentSearchAside contentType={props.contentType} />
-            <DownloadAside />
-          </div>
+          {props.contentType !== "news" && (
+            <div>
+              <ContentSearchAside contentType={props.contentType} />
+              <DownloadAside />
+            </div>
+          )}
+          {props.contentType === "news" && (
+            <div className="w-full max-w-[288px]">
+              <NewsAside />
+            </div>
+          )}
         </Aside>
       </MainContainer>
     </div>

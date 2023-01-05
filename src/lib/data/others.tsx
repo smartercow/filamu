@@ -4,6 +4,12 @@ export type RatingRage = {
   value?: string;
 };
 
+export type CelebType = {
+  id: string;
+  title: string;
+  value?: string;
+};
+
 export type ReleaseYear = {
   id: string;
   title: string;
@@ -40,6 +46,34 @@ export const RatingRange: RatingRage[] = [
     id: "6",
     title: "Above 9 stars",
     value: "above-9-stars",
+  },
+];
+
+export const CelebType: CelebType[] = [
+  {
+    id: "1",
+    title: "Actor",
+    value: "celeb_Actor",
+  },
+  {
+    id: "2",
+    title: "Actress",
+    value: "celeb_actress",
+  },
+  {
+    id: "3",
+    title: "Director",
+    value: "celeb_director",
+  },
+  {
+    id: "4",
+    title: "Producer",
+    value: "celeb_producer",
+  },
+  {
+    id: "5",
+    title: "Writer",
+    value: "celeb_writer",
   },
 ];
 

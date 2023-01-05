@@ -5,7 +5,7 @@ export function ContentInfo(props: Content): JSX.Element {
   return (
     <>
       {props && (
-        <div className="grid w-full grid-cols-2 justify-between gap-6 md:grid-cols-4">
+        <div className="grid w-full grid-cols-2 justify-between gap-6 pb-4 md:grid-cols-4">
           <div className="div-info-sec">
             <h6 className="heading-sec">Genre</h6>
             <p className="values-sec">
