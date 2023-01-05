@@ -94,5 +94,5 @@
   height: 25px;
   background-color: white;
   color: var(--violet11);
-  cursor: default;
+  /* cursor: default; */
 }

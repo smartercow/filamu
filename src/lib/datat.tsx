@@ -8,8 +8,8 @@ export type MediaOverviewProps = {
 export const mediaData: MediaOverviewProps[] = [
   {
     title: "Black Panther: Wakanda Forever",
-    embedId: "c1nYF21FGS4",
-    duration: "2:30",
+    embedId: "_Z3QKkl1WyM",
+    duration: "2:11",
     thumbnail: "/assets/content/trailers/1-black-panther-wakanda-forever.webp",
   },
   {
@@ -20,13 +20,13 @@ export const mediaData: MediaOverviewProps[] = [
   },
   {
     title: "Young, Famous & African",
-    embedId: "e3N2l_TCQXuw",
+    embedId: "OF9z_Yibuxk",
     duration: "1:50",
     thumbnail: "/assets/content/trailers/3-young-famous-african.jpg",
   },
   {
     title: "Beasts of No Nation",
-    embedId: "2xb9Ty-1fr",
+    embedId: "2xb9Ty-1frw",
     duration: "1:40",
     thumbnail: "/assets/content/trailers/4-beasts-of-no-nation.jpg",
   },

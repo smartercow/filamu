@@ -4,7 +4,7 @@ import {
   OverviewSliderLayout,
   OverviewNewsLayout,
 } from "@/components/layout/common-layout";
-import { OverviewMedia } from "@/components/overview/media/media";
+import OverviewMedia from "@/components/overview/media/mediat";
 import NewsOverview from "@/components/overview/news/news";
 import { OverviewSlider } from "@/components/overview/slider/slider";
 import Search from "@/components/search/search";

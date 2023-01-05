@@ -111,24 +111,34 @@ svg.star-svg {
 }
 
 /* Media slider */
-.media-slider .swiper-wrapper {
-  margin-top: 13px;
-  margin-bottom: 28px;
-  height: 420px;
-  width: 540px;
-}
+// .media-slider .swiper-wrapper {
+//     margin-top: 13px;
+//   margin-bottom: 28px;
+//   height: 340px;
+//   padding: 0;
+//   margin: 0;
+//   width: 540px;
+// }
 
-.media-slider .swiper-slide-active {
+.media-slider .swiper-slide-thumb-active {
   background-color: #1c3d5d;
-  margin-top: 16px;
+  // margin-top: 16px;
 }
 
-@media only screen and (max-width: 768px) {
+// .swiper-button-next,
+// .swiper-button-prev {
+//   transition: opacity 0.5s;
+// }
+
+// .swiper-button-disabled {
+//   opacity: 0 !important;
+// }
+/* @media only screen and (max-width: 768px) {
   .media-slider .swiper-wrapper {
     width: 100%;
     min-width: 340px;
   }
-}
+} */
 
 /* EMAIL INPUT */
 .email-input-icon {
