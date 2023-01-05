@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
-import { ContentsPageProps } from "../shared/page-contents";
 import ContentHero from "./hero-content";
-
+import type { ContentsPageProps } from "../shared/page-contents";
 const ContentPageMore = dynamic(() => import("./more-content"), {
   ssr: false,
 });

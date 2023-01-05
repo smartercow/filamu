@@ -3,13 +3,13 @@ import { useWindow } from "@/lib/context/window-context";
 import { MainContainer } from "../../container/container";
 import { OverviewHeading } from "../../overview/overview";
 import { contentData } from "@/lib/data/content";
-import { ContentPageProps } from "@/components/page/content/content";
 import { useRouter } from "next/router";
 import { Button } from "@/components/ui/button";
+import { ContentsPageProps } from "../shared/page-contents";
 
 export default function ContentPageMore({
   contentType,
-}: ContentPageProps): JSX.Element {
+}: ContentsPageProps): JSX.Element {
   const { width } = useWindow();
   const router = useRouter();
   const removeThis = router.query.id;
