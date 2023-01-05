@@ -15,7 +15,7 @@ const fillColorArray = [
 ];
 
 type RateProps = {
-  stars: string;
+  stars: number;
 };
 export function RateContent({ stars }: RateProps): JSX.Element {
   const [rating, setRating] = useState(0);

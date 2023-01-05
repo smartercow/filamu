@@ -38,17 +38,17 @@ export default function Contents({
         {contentData
           .filter((content) => content.type === contentType)
           .sort((a, b) => {
-            if (selectedSort === "pop_desc") {
+            if (selectedSort === "pop_desc_content") {
               return b.popularity - a.popularity;
-            } else if (selectedSort === "pop_asc") {
+            } else if (selectedSort === "pop_asc_content") {
               return a.popularity - b.popularity;
-            } else if (selectedSort === "rat_desc") {
+            } else if (selectedSort === "rat_desc_content") {
               return b.rating - a.rating;
-            } else if (selectedSort === "rat_asc") {
+            } else if (selectedSort === "rat_asc_content") {
               return a.rating - b.rating;
-            } else if (selectedSort === "rda_desc") {
+            } else if (selectedSort === "rda_desc_content") {
               return b.release - a.release;
-            } else if (selectedSort === "rda_asc") {
+            } else if (selectedSort === "rda_asc_content") {
               return a.release - b.release;
             } /* else {
               return;

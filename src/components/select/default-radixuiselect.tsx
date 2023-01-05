@@ -34,43 +34,41 @@ const RadixSelect = ({
           <ChevronUpIcon />
         </Select.ScrollUpButton>
         <Select.Viewport className="SelectViewport">
-          {contentType === "movie" ||
-            contentType === "tv-serie" ||
-            (contentType === "tv-show" && (
-              <>
-                <Select.Group>
-                  <Select.Label className="SelectLabel">Popular</Select.Label>
-                  <SelectItem value="pop_desc_content">
-                    Popularity Descneding
-                  </SelectItem>
-                  <SelectItem value="pop_asc_content">
-                    Popularity Ascending
-                  </SelectItem>
-                </Select.Group>
-                <Select.Separator className="SelectSeparator" />
-                <Select.Group>
-                  <Select.Label className="SelectLabel">Rating</Select.Label>
-                  <SelectItem value="rat_desc_content">
-                    Rating Descneding
-                  </SelectItem>
-                  <SelectItem value="rat_asc_content">
-                    Rating Ascending
-                  </SelectItem>
-                </Select.Group>
-                <Select.Separator className="SelectSeparator" />
-                <Select.Group>
-                  <Select.Label className="SelectLabel">
-                    Release date
-                  </Select.Label>
-                  <SelectItem value="rda_desc_content">
-                    Release date Descneding
-                  </SelectItem>
-                  <SelectItem value="rda_asc_content">
-                    Release date Ascending
-                  </SelectItem>
-                </Select.Group>
-              </>
-            ))}
+          {contentType !== "news" && contentType !== "celebrities" && (
+            <>
+              <Select.Group>
+                <Select.Label className="SelectLabel">Popular</Select.Label>
+                <SelectItem value="pop_desc_content">
+                  Popularity Descneding
+                </SelectItem>
+                <SelectItem value="pop_asc_content">
+                  Popularity Ascending
+                </SelectItem>
+              </Select.Group>
+              <Select.Separator className="SelectSeparator" />
+              <Select.Group>
+                <Select.Label className="SelectLabel">Rating</Select.Label>
+                <SelectItem value="rat_desc_content">
+                  Rating Descneding
+                </SelectItem>
+                <SelectItem value="rat_asc_content">
+                  Rating Ascending
+                </SelectItem>
+              </Select.Group>
+              <Select.Separator className="SelectSeparator" />
+              <Select.Group>
+                <Select.Label className="SelectLabel">
+                  Release date
+                </Select.Label>
+                <SelectItem value="rda_desc_content">
+                  Release date Descneding
+                </SelectItem>
+                <SelectItem value="rda_asc_content">
+                  Release date Ascending
+                </SelectItem>
+              </Select.Group>
+            </>
+          )}
           {contentType === "celebrities" && (
             <>
               <Select.Group>

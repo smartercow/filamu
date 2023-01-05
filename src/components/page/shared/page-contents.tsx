@@ -88,8 +88,10 @@ export function ContentsContainer(
 export default function ContentsPage({
   contentType,
 }: ContentsPageProps): JSX.Element {
-  const [selectedSort, setSelectedSort] = useState("pop_desc");
+  const [selectedSort, setSelectedSort] = useState("pop_desc_content");
   const [selectedView, setSelectedView] = useState("grid");
+
+  console.log(selectedSort);
 
   return (
     <main>
