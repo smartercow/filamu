@@ -22,7 +22,7 @@ export const DropdownData: Readonly<DropdownDataProps[]> = [
   },
   {
     id: "3",
-    title: "news on Filamu",
+    title: "News of Filamu ",
     description: "Read the latest ",
     href: "/upcoming",
     hasCategoryName: true,

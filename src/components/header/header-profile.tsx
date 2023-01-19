@@ -73,7 +73,7 @@ const HeaderProfile: React.FC<RightContentProps> = (): JSX.Element => {
             <Menu.Item>
               {({ active }) => (
                 <button
-                  onClick={() => handleRef("account/favorites")}
+                  onClick={() => handleRef("/account/favorites")}
                   className={`${
                     active ? "bg-primary text-white" : "text-white"
                   } hover-animation group flex w-full items-center rounded-md px-2 py-2 text-sm md:text-base`}
@@ -91,7 +91,7 @@ const HeaderProfile: React.FC<RightContentProps> = (): JSX.Element => {
             <Menu.Item>
               {({ active }) => (
                 <button
-                  onClick={() => handleRef("account/settings")}
+                  onClick={() => handleRef("#")}
                   className={`${
                     active ? "bg-primary text-white" : "text-white"
                   } hover-animation group flex w-full items-center rounded-md px-2 py-2 text-sm md:text-base`}

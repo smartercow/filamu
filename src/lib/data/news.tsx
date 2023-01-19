@@ -21,7 +21,7 @@ export const newsData: News[] = [
     column_two:
       "Sarah’s mother, a devout Christian, had always wanted her daughter to take over the store, but Sarah had other plans. Now, she must decide whether to return to Ghana or stay in the US and take over the store. The film is a story of family, faith, and the struggle to find one’s place in the world.",
     description:
-      "Exclusive: Amazon Studios has acquired Victoria Woodhull, with Oscar winning Room star Brie Larson polsed to produce, and play the",
+      "Queen of Glory, a contemporary comedic follow-up on the classic immigrant's tale, written & directed by Nana Mensah (Netflix's The Chair, 13 Reasons Why, An African City), is the latest film to receive BFI FAN New Release Support.",
   },
   {
     id: 2,

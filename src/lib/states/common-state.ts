@@ -34,3 +34,21 @@ export const ImageModalState = atom<ImageModalState>({
   key: "imageModalState",
   default: defaultImageModalState,
 });
+
+// ------------------------------
+interface VideoModalState {
+  open: boolean;
+  name?: string;
+  source?: string;
+}
+
+const defaultVideoModalState: VideoModalState = {
+  open: false,
+  name: "",
+  source: "",
+};
+
+export const VideoModalState = atom<VideoModalState>({
+  key: "videoModalState",
+  default: defaultVideoModalState,
+});

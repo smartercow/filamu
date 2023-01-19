@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { MediaOverviewProps } from "@/lib/datat";
+import { MediaOverviewProps } from "@/lib/data/datat";
 
 export default function MediaSwiperSlide({
   title,

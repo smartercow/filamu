@@ -5,9 +5,14 @@ import { HeroIcon } from "../ui/hero-icon";
 import cn from "clsx";
 import RightContent from "./header-right";
 import HeaderNavigation from "./header-navigation";
+import { useRecoilState } from "recoil";
+import { MenuState } from "@/lib/states/menu-state";
 
 export default function Header(): JSX.Element {
   const path = usePathname();
+  const [menuState, setMenuState] = useRecoilState(MenuState);
+  const toggle = menuState.open;
+
   const [scrollY, setScrollY] = useState(0);
   const [scrolled, setScrolled] = useState(false);
 
@@ -33,16 +38,16 @@ export default function Header(): JSX.Element {
   return (
     <header
       className={cn(
-        "dosis hover-animation fixed z-40 w-full py-2",
+        "dosis hover-animation fixed z-40 w-full py-1 md:py-0",
         scrolled &&
           // 'bg-opacity-60 bg-clip-padding backdrop-blur-xl backdrop-filter'
-          "bg-main-blue-sec py-0"
+          "bg-main-blue-sec"
       )}
     >
       <nav className="">
         <div
           className={cn(
-            "app-width-handler flex items-center justify-between gap-4 rounded-md pt-2",
+            "app-width-handler flex items-center justify-between gap-4 rounded-md pt-2 pb-2 md:pb-1",
             path?.startsWith("/movie/title") &&
               "bg-main-darkblue bg-opacity-25",
             path?.startsWith("/tv-serie/title") &&
@@ -52,8 +57,17 @@ export default function Header(): JSX.Element {
             scrolled && "bg-transparent"
           )}
         >
-          <div className="inline-flex sm:hidden">
-            <HeroIcon iconName="Bars3BottomLeftIcon" />
+          <div className="z-[44] inline-flex sm:hidden">
+            <button
+              onClick={() => setMenuState({ open: !toggle })}
+              className="hover-animation"
+            >
+              {toggle ? (
+                <HeroIcon iconName="XMarkIcon" />
+              ) : (
+                <HeroIcon iconName="Bars3BottomLeftIcon" />
+              )}
+            </button>
           </div>
           <HeaderLogo />
           <div className="mx-auto hidden w-full sm:inline-flex">

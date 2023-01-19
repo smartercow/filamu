@@ -8,7 +8,7 @@ import "swiper/css/thumbs";
 
 import { Swiper as SwiperType, FreeMode, Navigation, Thumbs } from "swiper";
 import { MainContainer } from "@/components/container/container";
-import { mediaData } from "@/lib/datat";
+import { mediaData } from "@/lib/data/datat";
 import MediaSwiperSlide from "./swiperslide-media";
 import YoutubeEmbed from "@/lib/helpers/youtube-embed";
 import { HeroIcon } from "@/components/ui/hero-icon";

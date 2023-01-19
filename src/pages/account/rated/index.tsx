@@ -1,6 +1,9 @@
-import Account from "@/components/page/account/account";
-import Profile from "@/components/page/account/profile/profile";
+import dynamic from "next/dynamic";
 import Rated from "@/components/page/account/rated/rated";
+
+const Account = dynamic(() => import("@/components/page/account/account"), {
+  ssr: false,
+});
 
 export default function RatedPage(): JSX.Element {
   return (

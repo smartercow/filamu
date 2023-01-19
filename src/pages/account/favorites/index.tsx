@@ -1,5 +1,9 @@
-import Account from "@/components/page/account/account";
+import dynamic from "next/dynamic";
 import Favorites from "@/components/page/account/favorites/favorites";
+
+const Account = dynamic(() => import("@/components/page/account/account"), {
+  ssr: false,
+});
 
 export default function FavoritesPage(): JSX.Element {
   return (

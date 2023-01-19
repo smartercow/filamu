@@ -68,6 +68,19 @@
     @apply mx-auto max-w-6xl px-4;
   }
 
+  .toggle-menu-list {
+    @apply space-y-4;
+    li {
+      @apply whitespace-nowrap;
+      a {
+        @apply dosis hover-animation text-lg font-semibold uppercase text-white;
+      }
+      a:hover {
+        @apply text-secondary;
+      }
+    }
+  }
+
   /* HEADING */
   .sub-heading {
     @apply text-lg font-semibold uppercase text-white;
@@ -84,5 +97,10 @@
 
   .values-sec {
     @apply inter font-medium text-white;
+  }
+
+  /* FILAMU */
+  .filamu-title {
+    @apply dosis text-3xl font-bold uppercase;
   }
 }

@@ -41,11 +41,11 @@ const NavLinks = [
   },
   {
     title: "Support",
-    href: "/support",
+    href: "/filamu/support",
   },
   {
     title: "FAQ",
-    href: "/faq",
+    href: "/filamu/faq",
   },
 ];
 
@@ -77,17 +77,6 @@ const HeaderNavigation = () => {
                         alt={item.title}
                         className="h-full w-full object-cover"
                       />
-                      <div className="CalloutHeading uppercase">
-                        {item.title}
-                      </div>
-                      <p className="CalloutText inter text-xs">
-                        {item.title === "Movies"
-                          ? "Kenyan and International movies all in one place."
-                          : item.title === "Series"
-                          ? "Watch Kenyan and international TV series."
-                          : item.title === "TV Shows" &&
-                            "Get all Kenyan TV shows and dramas right here."}
-                      </p>
                     </a>
                   </NavigationMenu.Link>
                 </li>
@@ -96,7 +85,7 @@ const HeaderNavigation = () => {
                   <ListItem
                     key={i}
                     title={`${link.title}${item.title}`}
-                    href={`${item.href}${link.href}`}
+                    href={`${item.href}`}
                     category={item.title}
                     // hasCategoryName={category.hasCategoryName}
                   >
@@ -173,13 +162,11 @@ const ListItem = forwardRef<HTMLAnchorElement, ListItemProps>(
           {...props}
           ref={forwardedRef}
         >
-          <div className="ListItemHeading">
-            <h4 className="uppercase">
-              {category} {title}
-            </h4>
+          <div className="ListItemHeading text-white">
+            <h4 className="">{title}</h4>
             {hasCategoryName && <span className="lowercase"> {category}</span>}
           </div>
-          <p className="ListItemText">{children}</p>
+          <p className="ListItemText text-gray-400">{children}</p>
         </a>
       </NavigationMenu.Link>
     </li>

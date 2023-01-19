@@ -9,7 +9,7 @@ import { HeroIcon } from "../../ui/hero-icon";
 import { ContentInfo } from "./info-content";
 import { RateContent } from "./rate-content";
 import { useSetRecoilState } from "recoil";
-import { YoutubeModalState } from "@/lib/states/common-state";
+import { VideoModalState, YoutubeModalState } from "@/lib/states/common-state";
 import { Favorites } from "@/types/sb-types";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import useFavorites from "@/utils/api/use-favorites";
@@ -32,6 +32,7 @@ export default function ContentHero(): JSX.Element {
   const supabaseClient = useSupabaseClient<Database>();
   const { data: favorite } = useFavorites();
   const setYoutubeModalState = useSetRecoilState(YoutubeModalState);
+  const setVideoModalState = useSetRecoilState(VideoModalState);
   const [content, setContent] = useState<Content | null>(null);
   const [added, setAdded] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -212,7 +213,15 @@ export default function ContentHero(): JSX.Element {
                       <RateContent stars={content.rating} />
                     </div>
                     <div className="flex w-full items-center justify-center pb-8 md:pb-0">
-                      <Link href="#" className="hover:text-white">
+                      <button
+                        onClick={() =>
+                          setVideoModalState({
+                            open: true,
+                            name: content.title,
+                            source: content.teaser,
+                          })
+                        }
+                      >
                         <div className="relative h-20 w-20 transition-all duration-300 hover:scale-110 md:h-24 md:w-24">
                           <span className="play-btn h-20 w-20 rounded-full">
                             <HeroIcon
@@ -223,7 +232,7 @@ export default function ContentHero(): JSX.Element {
                             <span className="absolute h-20 w-20 animate-ping rounded-full border opacity-20"></span>
                           </span>
                         </div>
-                      </Link>
+                      </button>
                     </div>
                   </div>
                   <ContentInfo {...content} />

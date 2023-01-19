@@ -16,24 +16,24 @@ interface SectionProps {
 }
 
 const resourcesLinks = [
-  { name: "About", href: "/about" },
-  { name: "Contact Us", href: "/contact-us" },
-  { name: "Blog", href: "/blog" },
-  { name: "Help Center", href: "/help-center" },
+  { name: "About", href: "/filamu/about" },
+  { name: "Contact Us", href: "/filamu/contact-us" },
+  { name: "Blog", href: "/filamu/blog" },
+  { name: "Help Center", href: "/filamu/help-center" },
 ];
 
 const legalLinks = [
-  { name: "Terms of Use", href: "/legal/terms-of-use" },
-  { name: "Privacy Policy", href: "/legal/privacy-policy" },
-  { name: "Security", href: "/legal/secuirty" },
-  { name: "Legal Notices", href: "/legal/legal-notices" },
+  { name: "Terms of Use", href: "/filamu/legal/terms-of-use" },
+  { name: "Privacy Policy", href: "/filamu/legal/privacy-policy" },
+  { name: "Security", href: "/filamu/legal/security" },
+  { name: "Legal Notices", href: "/filamu/legal/legal-notices" },
 ];
 
 const accountLinks = [
-  { name: "My Account", href: "/account/profile" },
-  { name: "Gift Cards", href: "/account/gift-cards" },
-  { name: "Favorites", href: "/account/favorites" },
-  { name: "User Guide", href: "/account/user-guide" },
+  { name: "My Account", href: "/filamu/account/my-account" },
+  { name: "Gift Cards", href: "/filamu/account/gift-cards" },
+  { name: "Favorites", href: "/filamu/account/favorites" },
+  { name: "User Guide", href: "/filamu/account/user-guide" },
 ];
 
 export default function Footer(): JSX.Element {

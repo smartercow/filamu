@@ -36,6 +36,8 @@ import SubscriptionModal from "@/components/modal/subscription-modal";
 import UserContextProvider from "@/lib/context/user-context";
 import YoutubeModal from "@/components/modal/youtube-modal";
 import ImageModal from "@/components/modal/image-modal";
+import ToggleMenu from "@/components/header/toggle-header";
+import VideoModal from "@/components/modal/video-modal";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +64,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             <UserContextProvider>
               <>
                 <Header />
+                <ToggleMenu />
                 <Component {...pageProps} />
                 <Footer />
               </>
@@ -70,6 +73,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
               <YoutubeModal />
               <ImageModal />
               <ToastContainer />
+              <VideoModal />
             </UserContextProvider>
           </RecoilRoot>
         </QueryClientProvider>

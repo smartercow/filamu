@@ -47,7 +47,7 @@ export function SlideContent(props: Content): JSX.Element {
             hasIcon
             btnIcon="ChevronRightIcon"
             className={cn("py-2 px-3 md:px-4")}
-            textStyle="text-xs md:text-sm"
+            textStyle="text-xs"
             onClick={handleRef}
           >
             Watch now
