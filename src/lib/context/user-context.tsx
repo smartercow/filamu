@@ -1,23 +1,16 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import useDashboardOverview from "@/utils/api/use-dashboard-overview";
 import { useRouter } from "next/router";
 import useAccountBillingStatus from "@/utils/api/use-account-billing-status";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { SubscriptionModalState } from "@/lib/states/subscription-state";
 import { useSessionContext } from "@supabase/auth-helpers-react";
 
 const UserContextProvider = ({ children }) => {
   const { session } = useSessionContext();
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const router = useRouter();
   const { accountId } = router.query;
-  const [subscriptionModal, setSubscriptionModal] = useRecoilState(
-    SubscriptionModalState
-  );
-
-  function toggleSidebar() {
-    setIsSidebarOpen(!isSidebarOpen);
-  }
+  const setSubscriptionModal = useSetRecoilState(SubscriptionModalState);
 
   const { data } = useDashboardOverview();
 
